@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { db } from "./firebase";
 import liff from '@line/liff';
+import "./App.css";
+
 
 const App = () => {
   const videoRef = useRef(null);
@@ -50,25 +52,20 @@ const App = () => {
       });
   };
 
-  const paintToCanvas = () => {
-    let video = videoRef.current;
-    let photo = photoRef.current;
-    let ctx = photo.getContext("2d");
 
-    const width = 320;
-    const height = 240;
-    photo.width = width;
-    photo.height = height;
-
-    return setInterval(() => {
-      ctx.drawImage(video, 0, 0, width, height);
-    }, 200);
-  };
 
   const takePhoto = () => {
     let photo = photoRef.current;
     let strip = stripRef.current;
+    let video = videoRef.current;
     
+    const width = 648;
+    const height = 480;
+    photo.width = width;
+    photo.height = height;
+
+    let ctx = photo.getContext("2d");
+    ctx.drawImage(video, 0, 0, width, height);
 
     console.warn(strip);
 
@@ -78,12 +75,13 @@ const App = () => {
     console.warn(data);
     console.log("Data:", data)
 
+    
     const a = document.createElement('a'); 
     a.href = data;
     strip.insertBefore(a, strip.firstChild);
-    a.innerHTML = `<img src='${data}' alt='thumbnail'/>`;
     a.download = 'screenshot.jpg';
-    document.body.appendChild(a);
+    
+    document.getElementById('btn1').innerText = 'Pleas wait...';
     
 
   db.collection("Camera Data")
@@ -94,11 +92,11 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div class = "Main">
       <p><b>Welcome!</b>{displayName}</p>
-      <p><b>Your UserID is</b>{userId}</p>
-      <button onClick={takePhoto}>Take a photo</button>
-      <video onCanPlay={() => paintToCanvas()} ref={videoRef} />
+      <p><a>Please take your eye photo below</a></p>
+      <h><video ref={videoRef} /></h>
+      <c><button onClick={takePhoto} id="btn1">Take a photo</button></c>
       <canvas ref={photoRef} />
       <div>
         <div ref={stripRef} />
