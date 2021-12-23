@@ -1,10 +1,37 @@
-import React, { useEffect, useRef } from "react";
-import { db } from "./firebase"
+import React, { useEffect, useRef, useState } from "react";
+import { db } from "./firebase";
+import liff from '@line/liff';
 
 const App = () => {
   const videoRef = useRef(null);
   const photoRef = useRef(null);
   const stripRef = useRef(null);
+  const [userId, setUserId] = useState("");
+  const [displayName, setDisplayName] = useState("");
+  const [idToken, setIdToken] = useState("");
+
+  const initLine = () => {
+    liff.init({ liffId: '1656554390-BDkoRm7V' }, () => {
+      if (liff.isLoggedIn()) {
+        runApp();
+      } else {
+        liff.login();
+      }
+    }, err => console.error(err));
+  }
+  const runApp = () => {
+    const idToken = liff.getIDToken();
+    setIdToken(idToken);
+    liff.getProfile().then(profile => {
+      console.log(profile);
+      setDisplayName(profile.displayName);
+      setUserId(profile.userId);
+    }).catch(err => console.error(err));
+  }
+  useEffect(() => {
+    initLine();
+  }, []);
+
 
   useEffect(() => {
     getVideo();
@@ -41,43 +68,33 @@ const App = () => {
   const takePhoto = (e) => {
     let photo = photoRef.current;
     let strip = stripRef.current;
-    
+    let dpname = displayName.current;
 
     console.warn(strip);
 
-    const data = photo.toDataURL("image/jpeg");
+    const data = photo.toDataURL("image/jpeg")
+    const name = dpname
 
     console.warn(data);
     console.log("Data:", data)
-    // const link = document.createElement("a");
-    // link.href = data;
-    // link.setAttribute("download", "myWebcam");
-    // link.innerHTML = `<img src='${data}' alt='thumbnail'/>`;
-    // strip.insertBefore(link, strip.firstChild);
 
     const a = document.createElement('a'); 
     a.href = data;
     strip.insertBefore(a, strip.firstChild);
     a.innerHTML = `<img src='${data}' alt='thumbnail'/>`;
-    a.download = 'screenshot.jpg';
     document.body.appendChild(a);
-    a.click();
     
 
-    db.collection("Images")
+  db.collection("Images")
       .add({
         picturebase64: data,
+        lineuserid: name,
       })
-    
-
-    // const uploadTask = storage.ref(`images/${image.name}`).put(image);
-    
-
-
   };
 
   return (
     <div>
+      <p><b>Welcome!</b>{displayName}</p>
       <button onClick={takePhoto}>Take a photo</button>
       <video onCanPlay={() => paintToCanvas()} ref={videoRef} />
       <canvas ref={photoRef} />
