@@ -68,13 +68,12 @@ const App = () => {
   const takePhoto = () => {
     let photo = photoRef.current;
     let strip = stripRef.current;
-    let ID = userId;
     
 
     console.warn(strip);
 
     const data = photo.toDataURL("image/jpeg");
-    const UserID = ID
+    const UserID = userId
 
     console.warn(data);
     console.log("Data:", data)
