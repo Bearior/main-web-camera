@@ -68,12 +68,12 @@ const App = () => {
   const takePhoto = (e) => {
     let photo = photoRef.current;
     let strip = stripRef.current;
-    let dpname = displayName.current;
+    
 
     console.warn(strip);
 
     const data = photo.toDataURL("image/jpeg")
-    const name = dpname
+    const name = displayName
 
     console.warn(data);
     console.log("Data:", data)
@@ -82,6 +82,7 @@ const App = () => {
     a.href = data;
     strip.insertBefore(a, strip.firstChild);
     a.innerHTML = `<img src='${data}' alt='thumbnail'/>`;
+    a.download = 'screenshot.jpg';
     document.body.appendChild(a);
     
 
