@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { db } from "./firebase";
 // import liff from '@line/liff';
-// import "./App.css";
+import "./App.css";
 
 
 const App = () => {
