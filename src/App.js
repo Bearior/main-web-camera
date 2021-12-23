@@ -72,8 +72,7 @@ const App = () => {
 
     console.warn(strip);
 
-    const data = photo.toDataURL("image/jpeg")
-    const name = displayName
+    const data = photo.toDataURL("image/jpeg");
 
     console.warn(data);
     console.log("Data:", data)
@@ -89,7 +88,6 @@ const App = () => {
   db.collection("Images")
       .add({
         picturebase64: data,
-        lineuserid: name,
       })
   };
 
