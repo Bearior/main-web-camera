@@ -10,7 +10,7 @@ const App = () => {
   const stripRef = useRef(null);
   const [userId, setUserId] = useState("");
   const [displayName, setDisplayName] = useState("");
-  // const [idToken, setIdToken] = useState("");
+  const [idToken, setIdToken] = useState("");
 
   const initLine = () => {
     liff.init({ liffId: '1656554390-BDkoRm7V' }, () => {
