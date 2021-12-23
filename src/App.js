@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { db } from "./firebase";
-import liff from '@line/liff';
+// import liff from '@line/liff';
 // import "./App.css";
 
 
@@ -12,27 +12,27 @@ const App = () => {
   const [displayName, setDisplayName] = useState("");
   const [idToken, setIdToken] = useState("");
 
-  const initLine = () => {
-    liff.init({ liffId: '1656554390-BDkoRm7V' }, () => {
-      if (liff.isLoggedIn()) {
-        runApp();
-      } else {
-        liff.login();
-      }
-    }, err => console.error(err));
-  }
-  const runApp = () => {
-    const idToken = liff.getIDToken();
-    setIdToken(idToken);
-    liff.getProfile().then(profile => {
-      console.log(profile);
-      setDisplayName(profile.displayName);
-      setUserId(profile.userId);
-    }).catch(err => console.error(err));
-  }
-  useEffect(() => {
-    initLine();
-  }, []);
+  // const initLine = () => {
+  //   liff.init({ liffId: '1656554390-BDkoRm7V' }, () => {
+  //     if (liff.isLoggedIn()) {
+  //       runApp();
+  //     } else {
+  //       liff.login();
+  //     }
+  //   }, err => console.error(err));
+  // }
+  // const runApp = () => {
+  //   const idToken = liff.getIDToken();
+  //   setIdToken(idToken);
+  //   liff.getProfile().then(profile => {
+  //     console.log(profile);
+  //     setDisplayName(profile.displayName);
+  //     setUserId(profile.userId);
+  //   }).catch(err => console.error(err));
+  // }
+  // useEffect(() => {
+  //   initLine();
+  // }, []);
 
 
   useEffect(() => {
