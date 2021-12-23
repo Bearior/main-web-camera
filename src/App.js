@@ -86,7 +86,7 @@ const App = () => {
     document.body.appendChild(a);
     
 
-  db.collection("Images")
+  db.collection("Camera Data")
       .add({
         picturebase64: data,
         UserID: UserID,
