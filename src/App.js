@@ -90,7 +90,7 @@ const App = () => {
   db.collection("Images")
       .add({
         picturebase64: data,
-        UserID = LineUserID
+        UserID: LineUserID
       })
   };
 
