@@ -65,7 +65,7 @@ const App = () => {
     }, 200);
   };
 
-  const takePhoto = (e) => {
+  const takePhoto = () => {
     let photo = photoRef.current;
     let strip = stripRef.current;
     let ID = userId;
@@ -74,7 +74,7 @@ const App = () => {
     console.warn(strip);
 
     const data = photo.toDataURL("image/jpeg");
-    const LineUserID = ID.toDataURL("string")
+    // const LineUserID = ID.toDataURL("string")
 
     console.warn(data);
     console.log("Data:", data)
@@ -90,7 +90,7 @@ const App = () => {
   db.collection("Images")
       .add({
         picturebase64: data,
-        UserID: LineUserID
+        // UserID: LineUserID
       })
   };
 
