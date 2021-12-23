@@ -97,6 +97,7 @@ const App = () => {
   return (
     <div>
       <p><b>Welcome!</b>{displayName}</p>
+      <p><b>Your UserID is</b>{userId}</p>
       <button onClick={takePhoto}>Take a photo</button>
       <video onCanPlay={() => paintToCanvas()} ref={videoRef} />
       <canvas ref={photoRef} />
