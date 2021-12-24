@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import { db } from "./firebase";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { db } from "../firebase";
 import liff from '@line/liff';
 import "./App.css";
 
 
-const App = () => {
+const Camera = () => {
   const videoRef = useRef(null);
   const photoRef = useRef(null);
   const stripRef = useRef(null);
@@ -107,4 +108,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Camera;
