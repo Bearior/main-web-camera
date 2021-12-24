@@ -71,6 +71,7 @@ const App = () => {
 
     const data = photo.toDataURL("image/jpeg");
     const UserID = userId
+    const Username = displayName
 
     console.warn(data);
     console.log("Data:", data)
@@ -88,6 +89,7 @@ const App = () => {
       .add({
         picturebase64: data,
         UserID: UserID,
+        Username : Username,
       })
   };
 
