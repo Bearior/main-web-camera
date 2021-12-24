@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./App.css";
+import "../o.css";
 import { db } from "../firebase";
 import Form1 from "../Picture/Form1.png"
 import Form2 from "../Picture/Form2.jpg"
