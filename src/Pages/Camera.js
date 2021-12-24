@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { db } from "../firebase";
 import liff from '@line/liff';
 import "./App.css";
@@ -12,6 +12,8 @@ const Camera = () => {
   const [userId, setUserId] = useState("");
   const [displayName, setDisplayName] = useState("");
   const [idToken, setIdToken] = useState("");
+  let navigate = useNavigate();
+
 
   const initLine = () => {
     liff.init({ liffId: '1656554390-BDkoRm7V' }, () => {
@@ -60,6 +62,7 @@ const Camera = () => {
     let strip = stripRef.current;
     let video = videoRef.current;
     
+    
     const width = 648;
     const height = 480;
     photo.width = width;
@@ -84,6 +87,8 @@ const Camera = () => {
     a.download = 'screenshot.jpg';
     
     document.getElementById('btn1').innerText = 'Pleas wait...';
+    
+    navigate("./Form")
     
 
   db.collection("Camera Data")
