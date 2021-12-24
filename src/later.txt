@@ -1,0 +1,21 @@
+import liff from '@line/liff';
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
+import Camera from "./App"
+import React, { useEffect, useRef, useState } from "react";
+
+
+
+const App = () => {
+
+
+  function P() {
+    return (
+      <Router>
+        <switch>
+          <Route path="./Camera" component = {Camera}/>
+        </switch>
+      </Router>
+    )
+  }
+
+export default App;
