@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "../o.css";
+import "./App.css";
+import { useNavigate } from "react-router-dom";
 import { db } from "../firebase";
 import Form1 from "../Picture/Form1.png"
 import Form2 from "../Picture/Form2.jpg"
@@ -19,28 +20,12 @@ const Contact = () => {
     const [com, setCom] = useState("");
   
     const [loader, setLoader] = useState(false);
+    let navigate = useNavigate();
   
     const handleSubmit = (e) => {
       e.preventDefault();
       setLoader(true);
-  
-      db.collection("users")
-        .add({
-          name: name,
-          Age: age,
-          gender: gender,
-          Sight: sight,
-          Sight2: sight2,
-          Sight3: sight3,
-          Sight4: sight4,
-          Sight5: sight5,
-          Sight6: sight6,
-          Sight7: sight7,
-          com: com,
-        })
-  
-  
-        .then(() => {
+
           setLoader(false);
           Swal.fire({
             title: 'คุณแน่ใจหรือไม่?',
@@ -49,14 +34,37 @@ const Contact = () => {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33', 
-            confirmButtonText: 'ใช่!'
-            }).then(() => {
-            { 
+            confirmButtonText: 'ใช่!',
+            cancelButtonText:'ยกเลิก'
+            }).then((result) => {
+              if (result.isConfirmed){
+                Swal.fire('แบบฟอร์มของคุณเสร็จแล้ว!', '', 'ตกลง' )
+                db.collection("users")
+                .add({
+                name: name,
+                Age: age,
+                gender: gender,
+                Sight: sight,
+                Sight2: sight2,
+                Sight3: sight3,
+                Sight4: sight4,
+                Sight5: sight5,
+                Sight6: sight6,
+                Sight7: sight7,
+                com: com,
+                }).then(() =>{
+                  navigate("../History")
+                })
+              }
+             
+             
               
-            //  this.props.submitUser(this.state)
-           }
+              
+            
+              
+           
          })
-        })
+        
   
   
         .catch((error) => {
@@ -80,11 +88,7 @@ const Contact = () => {
     
   
     return (
-  
-  
-      
-      
-      <form className="form" onSubmit={handleSubmit}>
+      <form class="form" onSubmit={handleSubmit}>
        
         
       
