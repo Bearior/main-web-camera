@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { useNavigate } from "react-router-dom";
 import { db } from "../firebase";
 import Form1 from "../Picture/Form1.png"
 import Form2 from "../Picture/Form2.jpg"
 import Swal from 'sweetalert2'
+import liff from '@line/liff';
 
 const Contact = () => {
     const [name, setName] = useState("");
@@ -18,13 +19,43 @@ const Contact = () => {
     const [sight6, setSight6] = useState("");
     const [sight7, setSight7] = useState("");
     const [com, setCom] = useState("");
-  
+    const [userId, setUserId] = useState("");
+    const [displayName, setDisplayName] = useState("");
+    const [idToken, setIdToken] = useState("");
     const [loader, setLoader] = useState(false);
+
     let navigate = useNavigate();
+
+    const initLine = () => {
+      liff.init({ liffId: '1656554390-BDkoRm7V' }, () => {
+        if (liff.isLoggedIn()) {
+          runApp();
+        } else {
+          liff.login();
+        }
+      }, err => console.error(err));
+    }
+    const runApp = () => {
+      const idToken = liff.getIDToken();
+      setIdToken(idToken);
+      liff.getProfile().then(profile => {
+        console.log(profile);
+        setDisplayName(profile.displayName);
+        setUserId(profile.userId);
+      }).catch(err => console.error(err));
+    }
+    useEffect(() => {
+      initLine();
+    }, []);
   
+  
+    
+
     const handleSubmit = (e) => {
       e.preventDefault();
       setLoader(true);
+
+      const UserID = userId
 
           setLoader(false);
           Swal.fire({
@@ -52,6 +83,7 @@ const Contact = () => {
                 Sight6: sight6,
                 Sight7: sight7,
                 com: com,
+                UserID: UserID,
                 }).then(() =>{
                   navigate("../History")
                 })
@@ -93,7 +125,7 @@ const Contact = () => {
         
       
         <h2>แบบสอบถามเกี่ยวกับโรคต้อกระจก</h2>
-        <h1>โปรดตอบตามความจริงเพื่อผลประโยช์นสูงสุดของทั้งสองฝ่าย</h1>
+        <h1><d>สวัสดี คุณ</d>{displayName}</h1>
   
         <label>ชื่อ - สกุล</label>
         <input
