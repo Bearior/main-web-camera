@@ -99,6 +99,7 @@ const Camera = () => {
       })
   };
 
+
   return (
     <div class = "Main">
       <p><b>Welcome!</b>{displayName}</p>

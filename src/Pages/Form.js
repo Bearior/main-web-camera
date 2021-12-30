@@ -100,6 +100,7 @@ const Contact = () => {
           placeholder="ชื่อ-นามสกุล"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          required
         />
   
         <label>โปรดใส่อายุของคุณ</label>
@@ -107,14 +108,12 @@ const Contact = () => {
           placeholder="ใส่อายุของคุณ"
           value={age}
           onChange={(e) => setAge(e.target.value)}
+          required
         />
         
-        <label>เลือกเพศสภาพของคุณ</label>
-        <select
-          
-          value={gender}
-          onChange={(e) => setGender(e.target.value)}>
-          <option value="Noinput">โปรดเลือก</option>
+        <label >เลือกเพศสภาพของคุณ</label>
+        <select value={gender} onChange={(e) => setGender(e.target.value)} required >
+          <option value="">โปรดเลือก</option>
           <option value="Men">ชาย</option>
           <option value="Women">หญิง</option>
           <option value="Others">อื่นๆ</option>
@@ -124,8 +123,8 @@ const Contact = () => {
         <img src={Form1} alt="Logo" />
         <select
           value={sight}
-          onChange={(e) => setSight(e.target.value)}>
-          <option value="Noinput">โปรดเลือก</option>
+          onChange={(e) => setSight(e.target.value)} required  >
+          <option value="">โปรดเลือก</option>
           <option value="ชัด">ชัด</option>
           <option value="ไม่ชัด">ไม่ชัด</option>
           <option value="ไม่แน่ใจ">ไม่แน่ใจ</option>
@@ -134,8 +133,8 @@ const Contact = () => {
         <label>ท่านมีอาการคันตาหรือไม่ ภายใน3วันนี้</label>
         <select
           value={sight2}
-          onChange={(e) => setSight2(e.target.value)}>
-          <option value="Noinput">โปรดเลือก</option>
+          onChange={(e) => setSight2(e.target.value)} required >
+          <option value="">โปรดเลือก</option>
           <option value="มี">มี</option>
           <option value="ไม่มี">ไม่มี</option>
         </select>
@@ -144,8 +143,8 @@ const Contact = () => {
         <img src={Form2} alt="Logo" />
         <select
           value={sight3}
-          onChange={(e) => setSight3(e.target.value)}>
-          <option value="Noinput">โปรดเลือก</option>
+          onChange={(e) => setSight3(e.target.value)} required >
+          <option value="">โปรดเลือก</option>
           <option value="มี">มี</option>
           <option value="ไม่มี">ไม่มี</option>
           <option value="ไม่แน่ใจ">ไม่แน่ใจ</option>
@@ -154,8 +153,8 @@ const Contact = () => {
         <label> ก่อนท่านจะมาใช้บริการของทางเรา ท่านเคยไปพบหมอดวงตามาก่อนหรือไม่ </label>
         <select
           value={sight4}
-          onChange={(e) => setSight4(e.target.value)}>
-          <option value="Noinput">โปรดเลือก</option>
+          onChange={(e) => setSight4(e.target.value)} required >
+          <option value="">โปรดเลือก</option>
           <option value="เคย">เคย</option>
           <option value="ไม่เคย">ไม่เคย</option>
         </select>
@@ -163,8 +162,8 @@ const Contact = () => {
         <label> ท่านเคยประสบอุบัติเหตุที่ทำให้เกิดการกระแทกแบบรุนแรงหรือไม่ </label>
         <select
           value={sight5}
-          onChange={(e) => setSight5(e.target.value)}>
-          <option value="Noinput">โปรดเลือก</option>
+          onChange={(e) => setSight5(e.target.value)} required >
+          <option value="">โปรดเลือก</option>
           <option value="เคย2">เคย</option>
           <option value="ไม่เคย2">ไม่เคย</option>
         </select>
@@ -172,8 +171,8 @@ const Contact = () => {
         <label> จากอุบัติเหตุที่กล่าวมานั้น ทำให้สภาพการมองเห็นของท่านเปลี่ยนไปหรือไม่ </label>
         <select
           value={sight6}
-          onChange={(e) => setSight6(e.target.value)}>
-          <option value="Noinput">โปรดเลือก</option>
+          onChange={(e) => setSight6(e.target.value)} required >
+          <option value="">โปรดเลือก</option>
           <option value="ใช่">ใช่</option>
           <option value="ไม่ใช่">ไม่ใช่</option>
           <option value="ไม่แน่ใจ">ไม่แน่ใจ</option>
@@ -182,8 +181,8 @@ const Contact = () => {
         <label> ท่านเคยผ่าตัดโรคที่เกี่ยวกับดวงตาหรือไม่ </label>
         <select
           value={sight7}
-          onChange={(e) => setSight7(e.target.value)}>
-          <option value="Noinput">โปรดเลือก</option>
+          onChange={(e) => setSight7(e.target.value)} required >
+          <option value="">โปรดเลือก</option>
           <option value="ใช่">ใช่</option>
           <option value="ไม่ใช่">ไม่ใช่</option>
           <option value="ไม่แน่ใจ">ไม่แน่ใจ</option>

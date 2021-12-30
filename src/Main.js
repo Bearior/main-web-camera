@@ -7,8 +7,8 @@ function App() {
     return (
     <Router>
         <Routes>
-            <Route path="/" element = {<Camera />} />
-            <Route path="/Form" element = {<Form />} />
+            <Route path="/" element = {<Form />} />
+            {/* <Route path="/Form" element = {<Form />} /> */}
             <Route path="/History" element = {<History />} />
         </Routes>
     </Router>
