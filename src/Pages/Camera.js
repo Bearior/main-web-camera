@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { db } from "../firebase";
+import { db } from "./firebase";
 import liff from '@line/liff';
 import "./App.css";
 

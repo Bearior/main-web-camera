@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { useNavigate } from "react-router-dom";
-import { db } from "../firebase";
+import { db } from "./firebase";
 import Form1 from "../Picture/Form1.png"
 import Form2 from "../Picture/Form2.jpg"
 import Swal from 'sweetalert2'
@@ -55,7 +55,6 @@ const Contact = () => {
       e.preventDefault();
       setLoader(true);
             const UserID = userId
-      
 
           setLoader(false);
           Swal.fire({
@@ -85,15 +84,10 @@ const Contact = () => {
                 com: com,
                 UserID: UserID,
                 }).then(() =>{
-                  navigate("../History")
+                  navigate("./History")
                 })
               }
              
-             
-              
-
-              
-           
          })
         
   
