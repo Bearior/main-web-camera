@@ -229,7 +229,6 @@ const Contact = () => {
         </button>
       </form>
       
-      
     );
   };
   
