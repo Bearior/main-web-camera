@@ -71,7 +71,8 @@ const Contact = () => {
             cancelButtonText:'ยกเลิก'
             }).then((result) => {
               if (result.isConfirmed){
-                Swal.fire('แบบฟอร์มของคุณเสร็จแล้ว!', '', 'ตกลง' )
+                console.log("in If")
+                Swal.fire('แบบฟอร์มของคุณเสร็จแล้ว!', '', 'success' )
                 db.collection("users")
                 .add({
                 name: name,
