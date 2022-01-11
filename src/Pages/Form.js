@@ -220,17 +220,6 @@ const Contact = () => {
           onChange={(e) => setCom(e.target.value)}
         />
   
-  
-  
-        {/* <label>Radio input test</label>
-        <radio  
-          onchange ={(e) => setSight(e.target.value)}
-          value={sight} > 
-          <p><input type="radio" value="3" name="sight" /> option1  </p>   
-          <p><input type="radio" value="2" name="sight" /> option2  </p>   
-          <p><input type="radio" value="1" name="sight" /> option3  </p>   
-        </radio> */}
-  
         <button
           type="submit"
           style={{ background: loader ? "#ccc" : " rgb(2, 2, 110)" }}
