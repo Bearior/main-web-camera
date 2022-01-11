@@ -177,7 +177,7 @@ textarea:focus {
 
 .form > button {
   padding: 20px;
-  border: 2px solid rgb(238, 98, 38);
+  border: none;
   background-color: rgb(119, 174, 221);
   font-weight: 600;
   font-size: 20px;
