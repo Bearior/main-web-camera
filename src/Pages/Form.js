@@ -238,7 +238,7 @@ const Contact = () => {
         </radio> */}
   
         <button
-          type="เสร็จสิ้น"
+          type="submit"
           style={{ background: loader ? "#ccc" : " rgb(2, 2, 110)" }}
         >
   
