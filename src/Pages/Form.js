@@ -7,6 +7,8 @@ import Form2 from "../Picture/Form2.jpg"
 import Swal from 'sweetalert2'
 import liff from '@line/liff';
 
+
+
 const Contact = () => {
     const [name, setName] = useState("");
     const [age, setAge] = useState("");

@@ -177,8 +177,8 @@ textarea:focus {
 
 .form > button {
   padding: 20px;
-  border: 2px solid rgb(124, 190, 243);
-  background-color: rgb(238, 98, 38);
+  border: 2px solid rgb(238, 98, 38);
+  background-color: rgb(119, 174, 221);
   font-weight: 600;
   font-size: 20px;
   border-radius: 3px;
@@ -191,7 +191,7 @@ textarea:focus {
 }
 
 .form > button:hover {
-  background-color: rgb(238, 145, 105);
+  background-color: rgb(54, 97, 238);
 }
 
 
