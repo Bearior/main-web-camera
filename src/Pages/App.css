@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: rgb(146, 218, 212);
+  background-color: rgb(119, 174, 221);
 }
 
 body,
@@ -102,7 +102,7 @@ button {
   margin-left: 50px;
   margin-right: 50px;
   font-family: "Inter", sans-serif;
-  background-color: rgb(146, 218, 212);
+  background-color: rgb(119, 174, 221);
 }
 
 .form > input,
