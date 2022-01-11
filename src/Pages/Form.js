@@ -89,11 +89,7 @@ const Contact = () => {
                   navigate("./History")
                 })
               }
-             
-             
-              
-              
-           
+         
          })
         
   
