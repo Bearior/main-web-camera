@@ -155,9 +155,9 @@ const Contact = () => {
           value={sight}
           onChange={(e) => setSight(e.target.value)} required  >
           <option value="">โปรดเลือก</option>
-          <option value="ชัด">ชัด</option>
-          <option value="ไม่ชัด">ไม่ชัด</option>
-          <option value="ไม่แน่ใจ">ไม่แน่ใจ</option>
+          <option value="0">ชัด</option>
+          <option value="2">ไม่ชัด</option>
+          <option value="1">ไม่แน่ใจ</option>
         </select>
   
         <label>ท่านมีอาการคันตาหรือไม่ ภายใน3วันนี้</label>
@@ -165,8 +165,8 @@ const Contact = () => {
           value={sight2}
           onChange={(e) => setSight2(e.target.value)} required >
           <option value="">โปรดเลือก</option>
-          <option value="มี">มี</option>
-          <option value="ไม่มี">ไม่มี</option>
+          <option value="1">มี</option>
+          <option value="0">ไม่มี</option>
         </select>
   
         <label> มีจุดดำๆหรือมัวๆอยู่บนตาของท่านหรือไม่ </label>
@@ -175,9 +175,9 @@ const Contact = () => {
           value={sight3}
           onChange={(e) => setSight3(e.target.value)} required >
           <option value="">โปรดเลือก</option>
-          <option value="มี">มี</option>
-          <option value="ไม่มี">ไม่มี</option>
-          <option value="ไม่แน่ใจ">ไม่แน่ใจ</option>
+          <option value="2">มี</option>
+          <option value="0">ไม่มี</option>
+          <option value="1">ไม่แน่ใจ</option>
         </select>
   
         <label> ก่อนท่านจะมาใช้บริการของทางเรา ท่านเคยไปพบหมอดวงตามาก่อนหรือไม่ </label>
@@ -185,8 +185,8 @@ const Contact = () => {
           value={sight4}
           onChange={(e) => setSight4(e.target.value)} required >
           <option value="">โปรดเลือก</option>
-          <option value="เคย">เคย</option>
-          <option value="ไม่เคย">ไม่เคย</option>
+          <option value="0">เคย</option>
+          <option value="1">ไม่เคย</option>
         </select>
   
         <label> ท่านเคยประสบอุบัติเหตุที่ทำให้เกิดการกระแทกแบบรุนแรงหรือไม่ </label>
@@ -194,8 +194,8 @@ const Contact = () => {
           value={sight5}
           onChange={(e) => setSight5(e.target.value)} required >
           <option value="">โปรดเลือก</option>
-          <option value="เคย2">เคย</option>
-          <option value="ไม่เคย2">ไม่เคย</option>
+          <option value="1">เคย</option>
+          <option value="0">ไม่เคย</option>
         </select>
   
         <label> จากอุบัติเหตุที่กล่าวมานั้น ทำให้สภาพการมองเห็นของท่านเปลี่ยนไปหรือไม่ </label>
@@ -203,9 +203,9 @@ const Contact = () => {
           value={sight6}
           onChange={(e) => setSight6(e.target.value)} required >
           <option value="">โปรดเลือก</option>
-          <option value="ใช่">ใช่</option>
-          <option value="ไม่ใช่">ไม่ใช่</option>
-          <option value="ไม่แน่ใจ">ไม่แน่ใจ</option>
+          <option value="2">ใช่</option>
+          <option value="0">ไม่ใช่</option>
+          <option value="1">ไม่แน่ใจ</option>
         </select>
   
         <label> ท่านเคยผ่าตัดโรคที่เกี่ยวกับดวงตาหรือไม่ </label>
@@ -213,9 +213,8 @@ const Contact = () => {
           value={sight7}
           onChange={(e) => setSight7(e.target.value)} required >
           <option value="">โปรดเลือก</option>
-          <option value="ใช่">ใช่</option>
-          <option value="ไม่ใช่">ไม่ใช่</option>
-          <option value="ไม่แน่ใจ">ไม่แน่ใจ</option>
+          <option value="1">เคย</option>
+          <option value="0">ไม่เคย</option>
         </select>
   
         <label>ข้อเสนอแนะ</label>
