@@ -223,7 +223,6 @@ const Contact = () => {
   
         <button
           type="submit"
-          style={{ background: loader ? "#ccc" : " rgb(2, 2, 110)" }}
         >
 
           เสร็จสิ้น
