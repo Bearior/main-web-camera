@@ -37,7 +37,7 @@ const History = () => {
     return(
     <div>
         AROI
-        <h1><d>สวัสดี คุณ </d>{displayName}<f> โปรดตอบตามความจริงเพื่อผลประโยช์นสูงสุดของทั้งสองฝ่าย</f></h1>
+        <h1><d>สวัสดี คุณ </d>{displayName} </h1>
         
         
         
