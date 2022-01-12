@@ -13,7 +13,7 @@ const History = () => {
 
 
     const initLine = () => {
-    liff.init({}, () => {
+    liff.init({ liffId: '1656554390-E4AwKpm8' }, () => {
       if (liff.isLoggedIn()) {
         runApp();
       } else {
