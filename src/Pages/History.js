@@ -13,7 +13,7 @@ const History = () => {
 
 
     const initLine = () => {
-    liff.init({ liffId: '1656554390-BDkoRm7V' }, () => {
+    liff.init({}, () => {
       if (liff.isLoggedIn()) {
         runApp();
       } else {
@@ -35,7 +35,17 @@ const History = () => {
   }, []);
 
     return(
-    <div>AROI</div>
+    <div>
+        AROI
+        <h1><d>สวัสดี คุณ </d>{displayName}<f> โปรดตอบตามความจริงเพื่อผลประโยช์นสูงสุดของทั้งสองฝ่าย</f></h1>
+        
+        
+        
+        
+    
+    
+    </div>
+    
     )
     
 }
