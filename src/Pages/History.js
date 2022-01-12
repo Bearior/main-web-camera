@@ -1,6 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import liff from '@line/liff';
 
-function History(){
+
+
+
+
+
+const History = () => {
+    const [userId, setUserId] = useState("");
+    const [displayName, setDisplayName] = useState("");
+    const [idToken, setIdToken] = useState("");
+
+
+    const initLine = () => {
+    liff.init({ liffId: '1656554390-BDkoRm7V' }, () => {
+      if (liff.isLoggedIn()) {
+        runApp();
+      } else {
+        liff.login();
+      }
+    }, err => console.error(err));
+    }
+  const runApp = () => {
+    const idToken = liff.getIDToken();
+    setIdToken(idToken);
+    liff.getProfile().then(profile => {
+      console.log(profile);
+      setDisplayName(profile.displayName);
+      setUserId(profile.userId);
+    }).catch(err => console.error(err));
+  }
+  useEffect(() => {
+    initLine();
+  }, []);
 
     return(
     <div>AROI</div>
