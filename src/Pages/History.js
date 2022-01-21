@@ -40,8 +40,8 @@ const History = () => {
 
     return(
     <div  >
+        <img src = {pictureUrl} />
         <h1 class="History-font" >
-          <img src = {pictureUrl} />
           <d>สวัสดี คุณ </d>{displayName} </h1>
         
         
