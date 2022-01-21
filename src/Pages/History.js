@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import liff from '@line/liff';
+import "./App.css"
+import Bg from "../Picture/Hbg.jpg"
 
 
 
@@ -10,6 +12,7 @@ const History = () => {
     const [userId, setUserId] = useState("");
     const [displayName, setDisplayName] = useState("");
     const [idToken, setIdToken] = useState("");
+    const [pictureUrl, setPictureUrl] = useState("");
 
 
     const initLine = () => {
@@ -28,6 +31,7 @@ const History = () => {
       console.log(profile);
       setDisplayName(profile.displayName);
       setUserId(profile.userId);
+      setPictureUrl(profile.pictureUrl);
     }).catch(err => console.error(err));
   }
   useEffect(() => {
@@ -35,9 +39,10 @@ const History = () => {
   }, []);
 
     return(
-    <div>
-        AROI
-        <h1><d>สวัสดี คุณ </d>{displayName} </h1>
+    <div  >
+        <h1 class="History-font" >
+          <img src = {pictureUrl} />
+          <d>สวัสดี คุณ </d>{displayName} </h1>
         
         
         
