@@ -39,10 +39,10 @@ const History = () => {
   }, []);
 
     return(
-    <div  >
+    <div class="History-font" >
         <img src = {pictureUrl}
-        style={{width: 400, height: 400, borderRadius: 400/ 2 }} />
-        <h1 class="History-font" >
+        style={{width: 200, height: 200, borderRadius: 400/ 2 }} />
+        <h1  >
           <d>สวัสดี คุณ </d>{displayName} </h1>
  
     </div>
