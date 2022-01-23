@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import liff from '@line/liff';
 import "./App.css"
 import Bg from "../Picture/Hbg.jpg"
+import { db } from "../firebase";
 
 
 
@@ -13,6 +14,28 @@ const History = () => {
     const [displayName, setDisplayName] = useState("");
     const [idToken, setIdToken] = useState("");
     const [pictureUrl, setPictureUrl] = useState("");
+    const [info , setInfo] = useState([]);
+
+    const UserID = userId
+
+    window.addEventListener('load', () => {
+      Fetchdata();
+      console.log("Fetchdata")
+    });
+
+    const Fetchdata = ()=>{
+      db.collection(UserID).get().then((querySnapshot) => {
+          console.log("incollection")
+          // Loop through the data and store
+          // it in array to display
+          querySnapshot.forEach(element => {
+              var data = element.data();
+              setInfo(arr => [...arr , data]);
+              console.log("inSnapshot")
+                
+          });
+      })
+  }
 
 
     const initLine = () => {
@@ -44,6 +67,16 @@ const History = () => {
         style={{width: 200, height: 200, borderRadius: 400/ 2 }} />
         <h1  >
           <d>สวัสดี คุณ </d>{displayName} </h1>
+
+          {
+            info.map((contacts) => (
+            <Frame title={contacts.title} 
+                   text={contacts.text} 
+                   AI={contacts.AI}
+                   Status={contacts.status}/>
+            ))
+        }
+        
     </div>
     
     )
