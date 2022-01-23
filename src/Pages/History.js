@@ -44,7 +44,6 @@ const History = () => {
         style={{width: 200, height: 200, borderRadius: 400/ 2 }} />
         <h1  >
           <d>สวัสดี คุณ </d>{displayName} </h1>
- 
     </div>
     
     )
