@@ -69,14 +69,13 @@ const History = () => {
           <d>สวัสดี คุณ </d>{displayName} </h1>
 
           {
-            info.map((contacts) => (
-            <Frame title={contacts.title} 
-                   text={contacts.text} 
-                   AI={contacts.AI}
-                   Status={contacts.status}/>
+            info.map((data) => (
+            <Frame name={data.name} 
+                   Age={data.Age} 
+                   gender={data.gender}/>
             ))
         }
-        
+
     </div>
     
     )
