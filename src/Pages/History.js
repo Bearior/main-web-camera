@@ -1,42 +1,27 @@
 import React, { useState, useEffect } from "react";
 import liff from '@line/liff';
 import "./App.css"
-import Bg from "../Picture/Hbg.jpg"
 import { db } from "../firebase";
-
-
-
-
-
 
 const History = () => {
     const [userId, setUserId] = useState("");
     const [displayName, setDisplayName] = useState("");
     const [idToken, setIdToken] = useState("");
     const [pictureUrl, setPictureUrl] = useState("");
-    const [info , setInfo] = useState([]);
+    const [name , setName] = useState("");
 
     const UserID = userId
 
-    window.addEventListener('load', () => {
-      Fetchdata();
-      console.log("Fetchdata")
-    });
-
-    const Fetchdata = ()=>{
-      db.collection(UserID).get().then((querySnapshot) => {
-          console.log("incollection")
-          // Loop through the data and store
-          // it in array to display
-          querySnapshot.forEach(element => {
-              var data = element.data();
-              setInfo(arr => [...arr , data]);
-              console.log("inSnapshot")
-                
-          });
+    db.collection(UserID)
+      .get()
+      .then( snapshot => {
+        const name = []
+        snapshot.forEach( doc => {
+          const data = doc.data()
+          name.push(data)
+        })
       })
-  }
-
+     setName(name)
 
     const initLine = () => {
     liff.init({ liffId: '1656554390-E4AwKpm8' }, () => {
@@ -68,16 +53,7 @@ const History = () => {
         <h1  >
           <d>สวัสดี คุณ </d>{displayName} </h1>
 
-          {
-            info.map((data) => (
-            <Frame name={data.name} 
-                   Age={data.Age} 
-                   gender={data.gender}/>
-            ))
-        }
-
     </div>
-    
     )
     
 }
