@@ -73,7 +73,7 @@ const Contact = () => {
               if (result.isConfirmed){
                 console.log("in If")
                 Swal.fire('แบบฟอร์มของคุณเสร็จแล้ว!', '', 'success' )
-                db.collection("users")
+                db.collection("users").doc(UserID)
                 .add({
                 name: name,
                 Age: age,
