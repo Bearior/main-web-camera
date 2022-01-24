@@ -8,7 +8,6 @@ const History = () => {
     const [displayName, setDisplayName] = useState("");
     const [idToken, setIdToken] = useState("");
     const [pictureUrl, setPictureUrl] = useState("");
-    const [name , setName] = useState("");
 
     const UserID = userId
 
@@ -17,55 +16,7 @@ const History = () => {
       console.log("Fetchdata")
     });
 
-  // Fetch the required data using the get() method
-  const Fetchdata = ()=>{
-      db.collection(UserID).get().then((querySnapshot) => {
-          console.log("incollection")
-          // Loop through the data and store
-          // it in array to display
-          querySnapshot.forEach(element => {
-              const contacts = element.data();
-              setInfo(arr => [...arr , contacts]);
-              console.log("inSnapshot")
-                
-          });
-      })
-  }
-  // Display the result on the page
-  return (
-    <div>
-        <center>
-        <h3>NewsProof</h3> 
-        </center>
-    {
-        info.map((contacts) => (
-        <Frame Age={contacts.Age} 
-               gender={contacts.gender} 
-               name={contacts.name}/>
-        ))
-    }
-    </div>
-
-);
-}
-
-// Define how each display entry will be structured
-const Frame = ({Age , gender , name }) => {
-console.log(Age + " " + text + " " + AI);
-if(Status == "read"){
-    
-    console.log("inif")
-    return(
-    
-        <center>
-            <div className="div">
-<p>age : {Age}%</p>
-<p>gender :  {gender}</p>       
-<p>name :  {name}</p>       
-            </div>
-        </center>
-    );
-}
+ 
 
     const initLine = () => {
     liff.init({ liffId: '1656554390-E4AwKpm8' }, () => {
