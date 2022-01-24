@@ -65,7 +65,6 @@ if(Status == "read"){
             </div>
         </center>
     );
-    
 }
 
     const initLine = () => {
