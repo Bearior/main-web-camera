@@ -25,6 +25,9 @@ const Contact = () => {
     const [displayName, setDisplayName] = useState("");
     const [idToken, setIdToken] = useState("");
     const [loader, setLoader] = useState(false);
+    var A = 0
+    var B = 1
+    var C = 2
 
     let navigate = useNavigate();
 
@@ -74,7 +77,7 @@ const Contact = () => {
                 console.log("in If")
                 Swal.fire('แบบฟอร์มของคุณเสร็จแล้ว!', '', 'success' )
                 const All = sight+sight2+sight3+sight4+sight5+sight6+sight7
-                db.collection(UserID)
+                db.collection("users").doc().collection(UserID)
                 .add({
                 name: name,
                 Age: age,
