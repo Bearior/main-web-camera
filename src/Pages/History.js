@@ -42,7 +42,7 @@ const History = () => {
 
 
     const Fetchdata = ()=>{
-      db.collection('users').doc().get().then((querySnapshot) => {
+      db.collection('users').get().then((querySnapshot) => {
           console.log("incollection")
           querySnapshot.forEach(element => {
               var contacts = element.data();
