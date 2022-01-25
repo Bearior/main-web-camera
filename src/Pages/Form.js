@@ -69,7 +69,6 @@ const Contact = () => {
       console.log("Fetchdata")
     });
 
-
     const Fetchdata = ()=>{
       db.collection('PicRe').doc(UserID).get().then((querySnapshot) => {
           console.log("incollection")
