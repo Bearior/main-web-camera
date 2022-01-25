@@ -74,7 +74,7 @@ const Contact = () => {
       db.collection('PicRe').doc(UserID).get().then((querySnapshot) => {
           console.log("incollection")
           querySnapshot.forEach(element => {
-              var contacts = element.data();
+              var contacts = element.data().Score;
               setPicscore(contacts);
               console.log("inSnapshot")
                 
