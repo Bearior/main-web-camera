@@ -74,8 +74,8 @@ const Contact = () => {
       db.collection('PicRe').doc(UserID).get().then((querySnapshot) => {
           console.log("incollection")
           querySnapshot.forEach(element => {
-              var contacts = element.data().Score;
-              setPicscore(contacts);
+              var PScore = element.data().Score;
+              setPicscore(PScore);
               console.log("inSnapshot")
                 
           });
@@ -105,7 +105,7 @@ const Contact = () => {
               if (result.isConfirmed){
                 console.log("in If")
                 Swal.fire('แบบฟอร์มของคุณเสร็จแล้ว!', '', 'success' )
-                const All = parseInt(sight)+parseInt(sight2)+parseInt(sight3)+parseInt(sight4)+parseInt(sight5)+parseInt(sight6)+parseInt(sight7)+parseInt(Picscore)
+                const All = parseInt(sight)+parseInt(sight2)+parseInt(sight3)+parseInt(sight4)+parseInt(sight5)+parseInt(sight6)+parseInt(sight7)+Picscore
                 db.collection(UserID)
                 .add({
                 name: name,
