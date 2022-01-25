@@ -118,10 +118,7 @@ const Contact = () => {
                   navigate("./History")
                 })
               }
-             
          })
-        
-  
   
         .catch((error) => {
           alert(error.message);
