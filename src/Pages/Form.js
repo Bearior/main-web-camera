@@ -36,6 +36,7 @@ const Contact = () => {
     const [idToken, setIdToken] = useState("");
     const [Picscore , setPicscore] = useState("");
     const [loader, setLoader] = useState(false);
+    const UserID = userId
     
 
     let navigate = useNavigate();
@@ -70,7 +71,7 @@ const Contact = () => {
 
 
     const Fetchdata = ()=>{
-      db.collection('PicRe').doc(userId).get().then((querySnapshot) => {
+      db.collection('PicRe').doc(UserID).get().then((querySnapshot) => {
           console.log("incollection")
           querySnapshot.forEach(element => {
               var contacts = element.data();
@@ -105,7 +106,7 @@ const Contact = () => {
                 console.log("in If")
                 Swal.fire('แบบฟอร์มของคุณเสร็จแล้ว!', '', 'success' )
                 const All = parseInt(sight)+parseInt(sight2)+parseInt(sight3)+parseInt(sight4)+parseInt(sight5)+parseInt(sight6)+parseInt(sight7)+parseInt(Picscore)
-                db.collection("users").doc().collection(UserID)
+                db.collection(UserID).doc()
                 .add({
                 name: name,
                 Age: age,
@@ -229,7 +230,7 @@ const Contact = () => {
           onChange={(e) => setSight6(e.target.value)} required >
           <option value="">โปรดเลือก</option>
           <option value={2}>ใช่</option>
-          <option value={0}>ไม่ใช่</option>
+          <option value={0}>ไม่เคยประสบอุบัติเหตุ</option>
           <option value={1}>ไม่แน่ใจ</option>
         </select>
   
