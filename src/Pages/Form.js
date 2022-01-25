@@ -7,17 +7,17 @@ import Form2 from "../Picture/Form2.jpg"
 import Swal from 'sweetalert2'
 import liff from '@line/liff';
 
-// #⣿⡇⣿⣿⣿⠛⠁⣴⣿⡿⠿⠧⠹⠿⠘⣿⣿⣿⡇⢸⡻⣿⣿⣿⣿⣿⣿⣿ #
-  // #⢹⡇⣿⣿⣿⠄⣞⣯⣷⣾⣿⣿⣧⡹⡆⡀⠉⢹⡌⠐⢿⣿⣿⣿⡞⣿⣿⣿ #
-  // #⣾⡇⣿⣿⡇⣾⣿⣿⣿⣿⣿⣿⣿⣿⣄⢻⣦⡀⠁⢸⡌⠻⣿⣿⣿⡽⣿⣿ #
-  // #⡇⣿⠹⣿⡇⡟⠛⣉⠁⠉⠉⠻⡿⣿⣿⣿⣿⣿⣦⣄⡉⠂⠈⠙⢿⣿⣝⣿ #
-  // #⠤⢿⡄⠹⣧⣷⣸⡇⠄⠄⠲⢰⣌⣾⣿⣿⣿⣿⣿⣿⣶⣤⣤⡀⠄⠈⠻⢮ #
-  // #⠄⢸⣧⠄⢘⢻⣿⡇⢀⣀⠄⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀⠄⢀ #
-  // #⠄⠈⣿⡆⢸⣿⣿⣿⣬⣭⣴⣿⣿⣿⣿⣿⣿⣿⣯⠝⠛⠛⠙⢿⡿⠃⠄⢸ #
-  // #⠄⠄⢿⣿⡀⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⡾⠁⢠⡇⢀ #
-  // #⠄⠄⢸⣿⡇⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣏⣫⣻⡟⢀⠄⣿⣷⣾ #
-  // #⠄⠄⢸⣿⡇⠄⠈⠙⠿⣿⣿⣿⣮⣿⣿⣿⣿⣿⣿⣿⣿⡿⢠⠊⢀⡇⣿⣿ #
-  // #⠒⠤⠄⣿⡇⢀⡲⠄⠄⠈⠙⠻⢿⣿⣿⠿⠿⠟⠛⠋⠁⣰⠇⠄⢸⣿⣿⣿ #
+  // #⣿⡇⣿⣿⣿⠛⠁⣴⣿⡿⠿⠧⠹⠿⠘⣿⣿⣿⡇⢸⡻⣿⣿⣿⣿⣿⣿⣿ # //
+  // #⢹⡇⣿⣿⣿⠄⣞⣯⣷⣾⣿⣿⣧⡹⡆⡀⠉⢹⡌⠐⢿⣿⣿⣿⡞⣿⣿⣿ # //
+  // #⣾⡇⣿⣿⡇⣾⣿⣿⣿⣿⣿⣿⣿⣿⣄⢻⣦⡀⠁⢸⡌⠻⣿⣿⣿⡽⣿⣿ # //
+  // #⡇⣿⠹⣿⡇⡟⠛⣉⠁⠉⠉⠻⡿⣿⣿⣿⣿⣿⣦⣄⡉⠂⠈⠙⢿⣿⣝⣿ # //
+  // #⠤⢿⡄⠹⣧⣷⣸⡇⠄⠄⠲⢰⣌⣾⣿⣿⣿⣿⣿⣿⣶⣤⣤⡀⠄⠈⠻⢮ # //
+  // #⠄⢸⣧⠄⢘⢻⣿⡇⢀⣀⠄⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀⠄⢀ # //
+  // #⠄⠈⣿⡆⢸⣿⣿⣿⣬⣭⣴⣿⣿⣿⣿⣿⣿⣿⣯⠝⠛⠛⠙⢿⡿⠃⠄⢸ # //
+  // #⠄⠄⢿⣿⡀⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⡾⠁⢠⡇⢀ # //
+  // #⠄⠄⢸⣿⡇⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣏⣫⣻⡟⢀⠄⣿⣷⣾ # //
+  // #⠄⠄⢸⣿⡇⠄⠈⠙⠿⣿⣿⣿⣮⣿⣿⣿⣿⣿⣿⣿⣿⡿⢠⠊⢀⡇⣿⣿ # // 
+  // #⠒⠤⠄⣿⡇⢀⡲⠄⠄⠈⠙⠻⢿⣿⣿⠿⠿⠟⠛⠋⠁⣰⠇⠄⢸⣿⣿⣿ # //
 
 const Contact = () => {
     const [name, setName] = useState("");
@@ -34,6 +34,7 @@ const Contact = () => {
     const [userId, setUserId] = useState("");
     const [displayName, setDisplayName] = useState("");
     const [idToken, setIdToken] = useState("");
+    const [Picscore , setPicscore] = useState("");
     const [loader, setLoader] = useState(false);
     
 
@@ -60,6 +61,25 @@ const Contact = () => {
     useEffect(() => {
       initLine();
     }, []);
+    
+    
+    window.addEventListener('load', () => {
+      Fetchdata();
+      console.log("Fetchdata")
+    });
+
+
+    const Fetchdata = ()=>{
+      db.collection('PicRe').doc(userId).get().then((querySnapshot) => {
+          console.log("incollection")
+          querySnapshot.forEach(element => {
+              var contacts = element.data();
+              setPicscore(contacts);
+              console.log("inSnapshot")
+                
+          });
+      })
+  }
   
   
     
@@ -84,7 +104,7 @@ const Contact = () => {
               if (result.isConfirmed){
                 console.log("in If")
                 Swal.fire('แบบฟอร์มของคุณเสร็จแล้ว!', '', 'success' )
-                const All = parseInt(sight)+parseInt(sight2)+parseInt(sight3)+parseInt(sight4)+parseInt(sight5)+parseInt(sight6)+parseInt(sight7)
+                const All = parseInt(sight)+parseInt(sight2)+parseInt(sight3)+parseInt(sight4)+parseInt(sight5)+parseInt(sight6)+parseInt(sight7)+parseInt(Picscore)
                 db.collection("users").doc().collection(UserID)
                 .add({
                 name: name,
