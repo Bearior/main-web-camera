@@ -57,7 +57,7 @@ const History = () => {
   return (
       <div>
           <center>
-          <h3>NewsProof</h3> 
+          <h3>History Test</h3> 
           </center>
       {
           info.map((contacts) => (
