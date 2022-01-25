@@ -74,7 +74,7 @@ const Contact = () => {
               if (result.isConfirmed){
                 console.log("in If")
                 Swal.fire('แบบฟอร์มของคุณเสร็จแล้ว!', '', 'success' )
-                const All = sight+sight2+sight3+sight4+sight5+sight6+sight7
+                const All = parseInt(sight)+parseInt(sight2)+parseInt(sight3)+parseInt(sight4)+parseInt(sight5)+parseInt(sight6)+parseInt(sight7)
                 db.collection(UserID)
                 .add({
                 name: name,
