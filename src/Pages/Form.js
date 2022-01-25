@@ -25,9 +25,7 @@ const Contact = () => {
     const [displayName, setDisplayName] = useState("");
     const [idToken, setIdToken] = useState("");
     const [loader, setLoader] = useState(false);
-    var A = 0
-    var B = 1
-    var C = 2
+    
 
     let navigate = useNavigate();
 
@@ -77,7 +75,7 @@ const Contact = () => {
                 console.log("in If")
                 Swal.fire('แบบฟอร์มของคุณเสร็จแล้ว!', '', 'success' )
                 const All = sight+sight2+sight3+sight4+sight5+sight6+sight7
-                db.collection("users").doc().collection(UserID)
+                db.collection(UserID)
                 .add({
                 name: name,
                 Age: age,
@@ -101,14 +99,14 @@ const Contact = () => {
   
       setName("");
       setAge("");
-      setSight2("");
+      setSight2();
       setGender("");
-      setSight("");
-      setSight3("");
-      setSight4("");
-      setSight5("");
-      setSight6("");
-      setSight7("");
+      setSight();
+      setSight3();
+      setSight4();
+      setSight5();
+      setSight6();
+      setSight7();
       setCom("");
     };
   
@@ -152,9 +150,9 @@ const Contact = () => {
           value={sight}
           onChange={(e) => setSight(e.target.value)} required  >
           <option value="">โปรดเลือก</option>
-          <option value="0">ชัด</option>
-          <option value="2">ไม่ชัด</option>
-          <option value="1">ไม่แน่ใจ</option>
+          <option value={0}>ชัด</option>
+          <option value={2}>ไม่ชัด</option>
+          <option value={1}>ไม่แน่ใจ</option>
         </select>
   
         <label>ท่านมีอาการคันตาหรือไม่ ภายใน3วันนี้</label>
@@ -162,8 +160,8 @@ const Contact = () => {
           value={sight2}
           onChange={(e) => setSight2(e.target.value)} required >
           <option value="">โปรดเลือก</option>
-          <option value="1">มี</option>
-          <option value="0">ไม่มี</option>
+          <option value={1}>มี</option>
+          <option value={0}>ไม่มี</option>
         </select>
   
         <label> มีจุดดำๆหรือมัวๆอยู่บนตาของท่านหรือไม่ </label>
@@ -172,9 +170,9 @@ const Contact = () => {
           value={sight3}
           onChange={(e) => setSight3(e.target.value)} required >
           <option value="">โปรดเลือก</option>
-          <option value="2">มี</option>
-          <option value="0">ไม่มี</option>
-          <option value="1">ไม่แน่ใจ</option>
+          <option value={2}>มี</option>
+          <option value={0}>ไม่มี</option>
+          <option value={1}>ไม่แน่ใจ</option>
         </select>
   
         <label> ก่อนท่านจะมาใช้บริการของทางเรา ท่านเคยไปพบหมอดวงตามาก่อนหรือไม่ </label>
@@ -182,8 +180,8 @@ const Contact = () => {
           value={sight4}
           onChange={(e) => setSight4(e.target.value)} required >
           <option value="">โปรดเลือก</option>
-          <option value="0">เคย</option>
-          <option value="1">ไม่เคย</option>
+          <option value={0}>เคย</option>
+          <option value={1}>ไม่เคย</option>
         </select>
   
         <label> ท่านเคยประสบอุบัติเหตุที่ทำให้เกิดการกระแทกแบบรุนแรงหรือไม่ </label>
@@ -191,8 +189,8 @@ const Contact = () => {
           value={sight5}
           onChange={(e) => setSight5(e.target.value)} required >
           <option value="">โปรดเลือก</option>
-          <option value="2">เคย</option>
-          <option value="0">ไม่เคย</option>
+          <option value={2}>เคย</option>
+          <option value={0}>ไม่เคย</option>
         </select>
   
         <label> จากอุบัติเหตุที่กล่าวมานั้น ทำให้สภาพการมองเห็นของท่านเปลี่ยนไปหรือไม่ </label>
@@ -200,9 +198,9 @@ const Contact = () => {
           value={sight6}
           onChange={(e) => setSight6(e.target.value)} required >
           <option value="">โปรดเลือก</option>
-          <option value="2">ใช่</option>
-          <option value="0">ไม่ใช่</option>
-          <option value="1">ไม่แน่ใจ</option>
+          <option value={2}>ใช่</option>
+          <option value={0}>ไม่ใช่</option>
+          <option value={1}>ไม่แน่ใจ</option>
         </select>
   
         <label> ท่านเคยผ่าตัดโรคที่เกี่ยวกับดวงตาหรือไม่ </label>
@@ -210,8 +208,8 @@ const Contact = () => {
           value={sight7}
           onChange={(e) => setSight7(e.target.value)} required >
           <option value="">โปรดเลือก</option>
-          <option value="0">เคย</option>
-          <option value="2">ไม่เคย</option>
+          <option value={0}>เคย</option>
+          <option value={2}>ไม่เคย</option>
         </select>
   
         <label>ข้อเสนอแนะ</label>
