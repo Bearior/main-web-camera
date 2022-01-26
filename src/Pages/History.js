@@ -42,7 +42,7 @@ const History = () => {
 
 
     const Fetchdata = ()=>{
-      db.collection('users').get().then((querySnapshot) => {
+      db.collection(UserID).get().then((querySnapshot) => {
           console.log("incollection")
           querySnapshot.forEach(element => {
               var contacts = element.data();
@@ -60,13 +60,13 @@ const History = () => {
           <h3 class="History-font" >History Test</h3> 
           <img src = {pictureUrl}
            style={{width: 200, height: 200, borderRadius: 400/ 2 }} />
-           <h1 class="History-font"><d class="History-font">สวัสดี คุณ </d>{displayName} </h1>
+           <h1 class="History-font"><d>สวัสดี คุณ </d>{displayName} </h1>
           
           </center>
       {
           info.map((contacts) => (
-          <Frame Age={contacts.Age} 
-                  gender={contacts.gender} 
+          <Frame Score={contacts.Score} 
+                  Age={contacts.Age} 
                   name={contacts.name}/>
           ))
       }
@@ -80,21 +80,11 @@ const History = () => {
 
     
 
-    // return(
-    // <div class="History-font" >
-    //     <img src = {pictureUrl}
-    //     style={{width: 200, height: 200, borderRadius: 400/ 2 }} />
-    //     <h1  >
-    //       <d>สวัสดี คุณ </d>{displayName} </h1>
-    //       <a>{renderUser}</a>
-
-    // </div>
-    // )
-    
 
 
-const Frame = ({Age , gender , name }) => {
-  console.log(Age + " " + gender + " " + name);
+
+const Frame = ({Score, Age , name }) => {
+  console.log(Age + " " + Score + " " + name);
       return(
       
           <center>
@@ -102,7 +92,7 @@ const Frame = ({Age , gender , name }) => {
   <p>
   <da>name : {name} {'\n'} </da>
   <da>Age : {Age}{"\n"}</da>
-  <da>gender :  {gender}{"\n"}</da>      
+  <da>Score :  {Score}{"\n"}</da>      
   </p>       
               </div>
           </center>
