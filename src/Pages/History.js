@@ -75,8 +75,6 @@ const History = () => {
   );
 }
 
-
-
 const Frame = ({Score, Age , name }) => {
   console.log(Age + " " + Score + " " + name);
       return(
