@@ -137,8 +137,6 @@ const Contact = () => {
       setCom("");
     };
   
-    
-  
     return (
       <form class="form" onSubmit={handleSubmit}>
        
