@@ -52,8 +52,6 @@ const History = () => {
           });
       })
   }
-    
-  
   return (
       <div >
           <center>
