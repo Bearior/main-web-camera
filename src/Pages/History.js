@@ -55,9 +55,13 @@ const History = () => {
     
   
   return (
-      <div>
+      <div >
           <center>
-          <h3>History Test</h3> 
+          <h3 class="History-font" >History Test</h3> 
+          <img src = {pictureUrl}
+           style={{width: 200, height: 200, borderRadius: 400/ 2 }} />
+           <h1><d>สวัสดี คุณ </d>{displayName} </h1>
+          
           </center>
       {
           info.map((contacts) => (
