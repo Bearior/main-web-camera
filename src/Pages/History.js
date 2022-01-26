@@ -10,7 +10,6 @@ const History = () => {
     const [pictureUrl, setPictureUrl] = useState("");
     const [info , setInfo] = useState([]);
 
-    const UserID = userId
 
     const initLine = () => {
       liff.init({ liffId: '1656554390-E4AwKpm8' }, () => {
@@ -42,7 +41,8 @@ const History = () => {
 
 
     const Fetchdata = ()=>{
-      db.collection(UserID).get().then((querySnapshot) => {
+      const USERID = userId
+      db.collection(USERID).get().then((querySnapshot) => {
           console.log("incollection")
           querySnapshot.forEach(element => {
               var contacts = element.data();
