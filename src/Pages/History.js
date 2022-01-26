@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import liff from '@line/liff';
 import "./App.css"
 import { db } from "../firebase";
-import { wait } from "@testing-library/user-event/dist/utils";
 
 const History = () => {
     const [userId, setUserId] = useState("");
@@ -34,13 +33,14 @@ const History = () => {
     useEffect(() => {
       initLine();
     }, []);
-    
-      
-    Fetchdata();
-      
+
+ window.addEventListener('load', () => {
+   Fetchdata();
+  console.log("Fetchdata")
+ });
 
 
-    const Fetchdata = ()=> {
+    const Fetchdata = ()=>{
       const USERID = userId
       db.collection(USERID).get().then((querySnapshot) => {
           console.log("incollection")
