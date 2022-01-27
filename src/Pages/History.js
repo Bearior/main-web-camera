@@ -14,7 +14,7 @@ const History = () => {
       liff.init({ liffId: '1656554390-E4AwKpm8' }, () => {
         if (liff.isLoggedIn()) {
           runApp();
-          Fetchdata();
+          
         } else {
           liff.login();
         }
@@ -32,6 +32,7 @@ const History = () => {
     }
     useEffect(() => {
       initLine();
+      Fetchdata();
     }, []);
     
 
@@ -46,11 +47,11 @@ const History = () => {
               setInfo(arr => [...arr , contacts]);
               console.log("inSnapshot")
               .then(()=> {
-                setShowButton(false)
+                i=false;
               })
           });
       })
-      i=false;
+      
       }
   }
   return (
