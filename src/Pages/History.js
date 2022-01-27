@@ -62,8 +62,8 @@ const History = () => {
                   name={contacts.name}/>
           ))
       }
-      {/* <button onClick={Fetchdata}>Click to load</button> */}
-      <div>{Fetchdata}</div>
+      <button onClick={Fetchdata}>Click to load</button>
+      
       </div>
 
   );
