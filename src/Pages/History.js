@@ -46,9 +46,11 @@ const History = () => {
               var contacts = element.data();
               setInfo(arr => [...arr , contacts]);
               console.log("inSnapshot")
-              .then(()=> {
+              
+
+          
                 i=false;
-              })
+              
           });
       })
       
