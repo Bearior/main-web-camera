@@ -28,11 +28,12 @@ const History = () => {
         setDisplayName(profile.displayName);
         setUserId(profile.userId);
         setPictureUrl(profile.pictureUrl);
+        Fetchdata();
       }).catch(err => console.error(err));
     }
     useEffect(() => {
       initLine();
-      Fetchdata();
+      
     }, []);
     
 
