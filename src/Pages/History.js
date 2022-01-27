@@ -47,9 +47,8 @@ const History = () => {
                 
           });
       })
-      
-      }
       i= false;
+      }
   }
   return (
       <div >
