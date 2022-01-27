@@ -66,14 +66,13 @@ const Contact = () => {
     
 
     const Fetchdata = ()=>{
-      db.collection('PicRe').doc(UserID).get().then((querySnapshot) => {
+      db.collection('PicRe').doc(UserID).get().then(() => {
           console.log("incollection")
-          querySnapshot(element => {
               var PScore = element.data().Score;
               setPicscore(PScore);
               console.log("inSnapshot")
                 
-          });
+          ;
       })
   }
   
