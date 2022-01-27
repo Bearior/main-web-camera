@@ -33,15 +33,10 @@ const History = () => {
       initLine();
     }, []);
     
- window.addEventListener('load', () => {
-   Fetchdata();
-  console.log("Fetchdata")
- });
 
- userId.toString();
 
     const Fetchdata = ()=>{
-      db.collection(profile.userId).get().then((querySnapshot) => {
+      db.collection(userId).get().then((querySnapshot) => {
           console.log("incollection")
           querySnapshot.forEach(element => {
               var contacts = element.data();
@@ -67,6 +62,7 @@ const History = () => {
                   name={contacts.name}/>
           ))
       }
+      <button onClick={Fetchdata}>Click to load</button>
       </div>
 
   );
