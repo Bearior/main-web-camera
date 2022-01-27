@@ -84,7 +84,8 @@ const Contact = () => {
       e.preventDefault();
       setLoader(true);
         
-      const UserID = userId
+      const UserID = 
+      
 
           setLoader(false);
           Swal.fire({
@@ -100,7 +101,7 @@ const Contact = () => {
               if (result.isConfirmed){
                 console.log("in If")
                 Swal.fire('แบบฟอร์มของคุณเสร็จแล้ว!', '', 'success' )
-                const All = parseInt(sight)+parseInt(sight2)+parseInt(sight3)+parseInt(sight4)+parseInt(sight5)+parseInt(sight6)+parseInt(sight7)+Picscore
+                const All = parseInt(sight)+parseInt(sight2)+parseInt(sight3)+parseInt(sight4)+parseInt(sight5)+parseInt(sight6)+parseInt(sight7)+parseInt(Picscore)
                 db.collection(UserID)
                 .add({
                 name: name,
