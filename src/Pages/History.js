@@ -34,9 +34,11 @@ const History = () => {
     }, []);
     
 
-
+    const i =0 ;
     const Fetchdata = ()=>{
-      db.collection(userId).get().then((querySnapshot) => {
+      if(i=0){
+
+        db.collection(userId).get().then((querySnapshot) => {
           console.log("incollection")
           querySnapshot.forEach(element => {
               var contacts = element.data();
@@ -45,6 +47,9 @@ const History = () => {
                 
           });
       })
+      i++;
+      }
+      
   }
   return (
       <div >
