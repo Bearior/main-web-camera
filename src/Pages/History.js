@@ -38,9 +38,9 @@ const History = () => {
   console.log("Fetchdata")
  });
 
+ userId.toString();
 
     const Fetchdata = ()=>{
-      userId + "";
       db.collection("users").where('UserID', '==', userId).get().then((querySnapshot) => {
           console.log("incollection")
           querySnapshot.forEach(element => {
