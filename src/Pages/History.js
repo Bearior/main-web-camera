@@ -42,7 +42,7 @@ const History = () => {
 
     const Fetchdata = ()=>{
       const USERID = userId
-      db.collection(USERID).get().then((querySnapshot) => {
+      db.collection("users").where('UserID', '==', USERID).get().then((querySnapshot) => {
           console.log("incollection")
           querySnapshot.forEach(element => {
               var contacts = element.data();
