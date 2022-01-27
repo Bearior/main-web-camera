@@ -49,9 +49,6 @@ const History = () => {
       })
       i=false;
       }
-      else{
-        return;
-      }
   }
   return (
       <div >
