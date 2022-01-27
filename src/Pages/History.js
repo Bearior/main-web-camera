@@ -41,7 +41,7 @@ const History = () => {
  userId.toString();
 
     const Fetchdata = ()=>{
-      db.collection("users").where('UserID', '==', userId).get().then((querySnapshot) => {
+      db.collection(userId).get().then((querySnapshot) => {
           console.log("incollection")
           querySnapshot.forEach(element => {
               var contacts = element.data();
