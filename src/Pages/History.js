@@ -47,7 +47,10 @@ const History = () => {
                 
           });
       })
-      i= false;
+      i=false;
+      }
+      else{
+        return;
       }
   }
   return (
