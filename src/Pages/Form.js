@@ -66,13 +66,14 @@ const Contact = () => {
     
 
     const Fetchdata = ()=>{
-      db.collection('PicRe').doc(UserID).get().then(() => {
+      db.collection('PicRe').doc(UserID).get().then((querySnapshot) => {
           console.log("incollection")
+          querySnapshot.forEach(element => {
               var PScore = element.data().Score;
               setPicscore(PScore);
               console.log("inSnapshot")
                 
-          ;
+          });
       })
   }
   
@@ -83,8 +84,7 @@ const Contact = () => {
       e.preventDefault();
       setLoader(true);
         
-      const UserID = 
-      
+      const UserID = userId
 
           setLoader(false);
           Swal.fire({
