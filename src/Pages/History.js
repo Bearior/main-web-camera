@@ -28,7 +28,6 @@ const History = () => {
         setDisplayName(profile.displayName);
         setUserId(profile.userId);
         setPictureUrl(profile.pictureUrl);
-        Fetchdata();
       }).catch(err => console.error(err));
     }
     useEffect(() => {
@@ -62,8 +61,8 @@ const History = () => {
           <img src = {pictureUrl}
            style={{width: 200, height: 200, borderRadius: 400/ 2 }} />
            <h1 class="History-font"><h2>สวัสดี คุณ </h2>{displayName} </h1>
-           {/* <button class="form" onClick={Fetchdata}>Click to load</button> */}
-          </center>
+           <button class="form" onClick={Fetchdata}>Click to load</button>
+          </center> 
       {
           info.map((contacts) => (
           <Frame Score={contacts.Score} 
