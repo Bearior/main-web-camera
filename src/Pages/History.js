@@ -10,7 +10,28 @@ const History = () => {
     const [pictureUrl, setPictureUrl] = useState("");
     const [info , setInfo] = useState([]);
 
-
+    const initLine = () => {
+      liff.init({ liffId: '1656554390-E4AwKpm8' }, () => {
+        if (liff.isLoggedIn()) {
+          runApp();
+        } else {
+          liff.login();
+        }
+      }, err => console.error(err));
+      }
+    const runApp = () => {
+      const idToken = liff.getIDToken();
+      setIdToken(idToken);
+      liff.getProfile().then(profile => {
+        console.log(profile);
+        setDisplayName(profile.displayName);
+        setUserId(profile.userId);
+        setPictureUrl(profile.pictureUrl);
+      }).catch(err => console.error(err));
+    }
+    useEffect(() => {
+      initLine();
+    }, []);
     
  window.addEventListener('load', () => {
    Fetchdata();
@@ -19,29 +40,7 @@ const History = () => {
 
 
     const Fetchdata = ()=>{
-      const initLine = () => {
-        liff.init({ liffId: '1656554390-E4AwKpm8' }, () => {
-          if (liff.isLoggedIn()) {
-            runApp();
-          } else {
-            liff.login();
-          }
-        }, err => console.error(err));
-        }
-      const runApp = () => {
-        const idToken = liff.getIDToken();
-        setIdToken(idToken);
-        liff.getProfile().then(profile => {
-          console.log(profile);
-          setDisplayName(profile.displayName);
-          setUserId(profile.userId);
-          setPictureUrl(profile.pictureUrl);
-        }).catch(err => console.error(err));
-      }
-      useEffect(() => {
-        initLine();
-      }, []);
-  
+      
       const USERID = userId
       db.collection("users").where('UserID', '==', USERID).get().then((querySnapshot) => {
           console.log("incollection")
@@ -59,7 +58,7 @@ const History = () => {
           <h3 class="History-font" >History Test</h3> 
           <img src = {pictureUrl}
            style={{width: 200, height: 200, borderRadius: 400/ 2 }} />
-           <h1 class="History-font"><d>สวัสดี คุณ </d>{displayName} </h1>
+           <h1 class="History-font"><h2>สวัสดี คุณ </h2>{displayName} </h1>
           
           </center>
       {
