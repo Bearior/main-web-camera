@@ -64,10 +64,6 @@ const Contact = () => {
     }, []);
     
     
-    window.addEventListener('load', () => {
-      Fetchdata();
-      console.log("Fetchdata")
-    });
 
     const Fetchdata = ()=>{
       db.collection('PicRe').doc(UserID).get().then((querySnapshot) => {
@@ -246,6 +242,7 @@ const Contact = () => {
   
         <button
           type="submit"
+          onClick={Fetchdata}
         >
 
           เสร็จสิ้น
