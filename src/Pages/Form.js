@@ -69,7 +69,7 @@ const Contact = () => {
 
     const Fetchdata = () =>{
       db.collection('PicRe').doc(UserID).get().then(user => {
-        user.docs.array.forEach(element => {
+        user.docs.forEach(element => {
           console.log(element.data())          
         });
           console.log("gotdoc")
