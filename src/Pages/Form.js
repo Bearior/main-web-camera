@@ -67,13 +67,15 @@ const Contact = () => {
     
     
 
-    const Fetchdata = ()=>{
-      db.collection('PicRe').doc(UserID).get().then(() => {
+    const Fetchdata = () =>{
+      db.collection('PicRe').doc(UserID).get().then(user => {
+        user.docs.array.forEach(element => {
+          console.log(element.data())          
+        });
           console.log("gotdoc")
-              var contacts = data();
+              var contacts = user.docs.data();
               setInfo(arr => [...arr , contacts]);
               console.log("inSnapshot")
-              console.log(data())
               info.map((contacts)=>(
                 setPicscore(contacts.Score)
               ))
