@@ -36,7 +36,9 @@ const Contact = () => {
     const [idToken, setIdToken] = useState("");
     const [Picscore , setPicscore] = useState("");
     const [loader, setLoader] = useState(false);
+    const [info , setInfo] = useState([]);
     const UserID = userId
+
     
 
     let navigate = useNavigate();
@@ -69,9 +71,13 @@ const Contact = () => {
       db.collection('PicRe').doc(UserID).get().then((querySnapshot) => {
           console.log("incollection")
           querySnapshot.forEach(element => {
-              var PScore = element.data().Score;
-              setPicscore(PScore);
+              var contacts = element.data();
+              setInfo(arr => [...arr , contacts]);
               console.log("inSnapshot")
+              info.map((contacts)=>(
+                setPicscore(contacts.Score)
+              ))
+              console.log(Picscore)
                 
           });
       })
