@@ -68,9 +68,8 @@ const Contact = () => {
     
 
     const Fetchdata = ()=>{
-      db.collection('PicRe').doc(UserID).get().then((querySnapshot) => {
-          console.log("incollection")
-          querySnapshot.forEach(element => {
+      db.collection('PicRe').doc(UserID).get().then(() => {
+          console.log("gotdoc")
               var contacts = element.data();
               setInfo(arr => [...arr , contacts]);
               console.log("inSnapshot")
@@ -80,8 +79,8 @@ const Contact = () => {
               console.log(Picscore)
                 
           });
-      })
-  }
+      }
+
   
   
     
