@@ -65,18 +65,18 @@ const Contact = () => {
     
     
 
-    const Fetchdata = ()=>{
+    // const Fetchdata = ()=>{
 
-        db.collection(userId).get().then((querySnapshot) => {
-          console.log("incollection")
-          querySnapshot.forEach(element => {
-              var contacts = element.data();
-              setInfo(arr => [...arr , contacts]);
-              console.log("inSnapshot")
+    //     db.collection(userId).get().then((querySnapshot) => {
+    //       console.log("incollection")
+    //       querySnapshot.forEach(element => {
+    //           var contacts = element.data();
+    //           setInfo(arr => [...arr , contacts]);
+    //           console.log("inSnapshot")
               
-          });
-      })
-    }
+    //       });
+    //   })
+    // }
   
   
     
