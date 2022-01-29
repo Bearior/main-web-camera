@@ -247,13 +247,10 @@ h1{
 
 .history > h1{
   text-align: center;
-  font-size: 10px;
-}
-
-.history > h2{
-  text-align: center;
   font-size: 25px;
 }
+
+
 
 .center {
   background-image: url(../Picture/unnamed\ \(1\).jpg);
