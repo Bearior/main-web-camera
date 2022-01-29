@@ -59,9 +59,9 @@ const History = () => {
   return (
       <div class = "history">
           <center class = "center">
-          <h3 class="History-font" >History Test</h3> 
-          <img src = {pictureUrl} 
-           style={{width: 150, height: 150, borderRadius: 400/ 2, border: 2}} />
+              <h3 class="History-font" >History Test</h3> 
+              <img src = {pictureUrl} 
+              style={{width: 150, height: 150, borderRadius: 400/ 2, border: 2}} />
            </center> 
            <h1><h2>สวัสดี คุณ </h2>{displayName} </h1>
            <button class="loadbtn" onClick={Fetchdata}>Click to load</button>
