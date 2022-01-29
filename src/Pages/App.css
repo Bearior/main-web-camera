@@ -215,6 +215,7 @@ textarea:focus {
   font-family: 'Prompt', sans-serif;
   display:"flex";
   justify-content: center;
+  background-color: rgb(226, 155, 0);
 }
 
 h3{
