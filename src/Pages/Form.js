@@ -243,7 +243,7 @@ const Contact = () => {
   
         <button
           type="submit"
-          onClick={Fetchdata}
+          // onClick={Fetchdata}
         >
 
           เสร็จสิ้น
