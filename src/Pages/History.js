@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import liff from '@line/liff';
+import liff from '@line/liff';
 import "./App.css"
 import { db } from "../firebase";
 
@@ -10,30 +10,30 @@ const History = () => {
     const [pictureUrl, setPictureUrl] = useState("");
     const [info , setInfo] = useState([]);
 
-    // const initLine = () => {
-    //   liff.init({ liffId: '1656554390-E4AwKpm8' }, () => {
-    //     if (liff.isLoggedIn()) {
-    //       runApp();
+    const initLine = () => {
+      liff.init({ liffId: '1656554390-E4AwKpm8' }, () => {
+        if (liff.isLoggedIn()) {
+          runApp();
           
-    //     } else {
-    //       liff.login();
-    //     }
-    //   }, err => console.error(err));
-    //   }
-    // const runApp = () => {
-    //   const idToken = liff.getIDToken();
-    //   setIdToken(idToken);
-    //   liff.getProfile().then(profile => {
-    //     console.log(profile);
-    //     setDisplayName(profile.displayName);
-    //     setUserId(profile.userId);
-    //     setPictureUrl(profile.pictureUrl);
-    //   }).catch(err => console.error(err));
-    // }
-    // useEffect(() => {
-    //   initLine();
+        } else {
+          liff.login();
+        }
+      }, err => console.error(err));
+      }
+    const runApp = () => {
+      const idToken = liff.getIDToken();
+      setIdToken(idToken);
+      liff.getProfile().then(profile => {
+        console.log(profile);
+        setDisplayName(profile.displayName);
+        setUserId(profile.userId);
+        setPictureUrl(profile.pictureUrl);
+      }).catch(err => console.error(err));
+    }
+    useEffect(() => {
+      initLine();
       
-    // }, []);
+    }, []);
     
 
     var i = true ;
