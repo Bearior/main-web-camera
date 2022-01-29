@@ -242,10 +242,12 @@ h1{
 .center > img{
   margin-bottom: 30px;
   background-color: rgb(237, 182, 100);
+  border: 5px solid rgb(237, 182, 100);
 }
 
 .history > h1{
   text-align: center;
+  font-size: 25px;
 }
 
 .center {
