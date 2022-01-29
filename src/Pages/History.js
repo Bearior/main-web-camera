@@ -60,7 +60,8 @@ const History = () => {
       <div class = "history">
           <center class = "center">
               <h3 class="History-font" >History Test</h3> 
-              <img src = {pictureUrl}  />
+              <img src = {pictureUrl} 
+              style={{width: 150, height: 150}} />
            </center> 
            <h1><h2>สวัสดี คุณ </h2>{displayName} </h1>
            <center>
