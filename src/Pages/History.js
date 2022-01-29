@@ -61,7 +61,7 @@ const History = () => {
           <center>
           <h3 class="History-font" >History Test</h3> 
           <img src = {pictureUrl}
-           style={{width: 200, height: 200, borderRadius: 400/ 2 }} />
+           style={{width: 150, height: 150, borderRadius: 400/ 2 }} />
            <h1 class="History-font"><h2>สวัสดี คุณ </h2>{displayName} </h1>
            <button class="loadbtn" onClick={Fetchdata}>Click to load</button>
           </center> 
