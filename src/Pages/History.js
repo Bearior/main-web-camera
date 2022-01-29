@@ -61,7 +61,7 @@ const History = () => {
           <center class = "center">
               <h3 class="History-font" >History Test</h3> 
               <img src = {pictureUrl} 
-              style={{width: 250, height: 250}} />
+              style={{width: 200, height: 200}} />
            </center> 
            <h1><h2>สวัสดี คุณ </h2>{displayName} </h1>
            <center>
