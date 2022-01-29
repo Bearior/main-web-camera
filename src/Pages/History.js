@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import liff from '@line/liff';
+// import liff from '@line/liff';
 import "./App.css"
 import { db } from "../firebase";
 
@@ -10,30 +10,30 @@ const History = () => {
     const [pictureUrl, setPictureUrl] = useState("");
     const [info , setInfo] = useState([]);
 
-    const initLine = () => {
-      liff.init({ liffId: '1656554390-E4AwKpm8' }, () => {
-        if (liff.isLoggedIn()) {
-          runApp();
+    // const initLine = () => {
+    //   liff.init({ liffId: '1656554390-E4AwKpm8' }, () => {
+    //     if (liff.isLoggedIn()) {
+    //       runApp();
           
-        } else {
-          liff.login();
-        }
-      }, err => console.error(err));
-      }
-    const runApp = () => {
-      const idToken = liff.getIDToken();
-      setIdToken(idToken);
-      liff.getProfile().then(profile => {
-        console.log(profile);
-        setDisplayName(profile.displayName);
-        setUserId(profile.userId);
-        setPictureUrl(profile.pictureUrl);
-      }).catch(err => console.error(err));
-    }
-    useEffect(() => {
-      initLine();
+    //     } else {
+    //       liff.login();
+    //     }
+    //   }, err => console.error(err));
+    //   }
+    // const runApp = () => {
+    //   const idToken = liff.getIDToken();
+    //   setIdToken(idToken);
+    //   liff.getProfile().then(profile => {
+    //     console.log(profile);
+    //     setDisplayName(profile.displayName);
+    //     setUserId(profile.userId);
+    //     setPictureUrl(profile.pictureUrl);
+    //   }).catch(err => console.error(err));
+    // }
+    // useEffect(() => {
+    //   initLine();
       
-    }, []);
+    // }, []);
     
 
     var i = true ;
@@ -57,14 +57,15 @@ const History = () => {
       }
   }
   return (
-      <div >
-          <center>
+      <div class = "history">
+          <center class = "center">
           <h3 class="History-font" >History Test</h3> 
-          <img src = {pictureUrl}
+          <img src = {pictureUrl} 
            style={{width: 150, height: 150, borderRadius: 400/ 2, border: 2}} />
-           <h1 class="History-font"><h2>สวัสดี คุณ </h2>{displayName} </h1>
+           </center> 
+           <h1><h2>สวัสดี คุณ </h2>{displayName} </h1>
            <button class="loadbtn" onClick={Fetchdata}>Click to load</button>
-          </center> 
+          
       {
           info.map((contacts) => (
           <Frame Score={contacts.Score} 

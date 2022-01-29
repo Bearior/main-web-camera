@@ -215,7 +215,9 @@ textarea:focus {
   font-family: 'Prompt', sans-serif;
   display:"flex";
   justify-content: center;
-  background-color: rgb(226, 155, 0);
+  background-color: rgb(119, 174, 221);
+  border: 10px solid rgb(186, 214, 240);
+  color: rgb(255, 255, 255);;
 }
 
 h3{
@@ -223,10 +225,33 @@ h3{
   font-size: 25px;
   margin-left: auto;
   margin-Right: auto;
-  margin-top: 50px;
   margin-bottom: 40px;
 }
 
+h1{
+  font-size: 20px;
+  flex-direction: column;
+  font-family: 'Prompt', sans-serif;
+  display:"flex";
+  justify-content: center;
+  background-color: rgb(119, 174, 221);
+  border: 10px solid rgb(186, 214, 240);
+  color: rgb(255, 255, 255);;
+}
+
+.center > img{
+  margin-bottom: 30px;
+  background-color: rgb(237, 182, 100);
+}
+
+.history > h1{
+  text-align: center;
+}
+
+.center {
+  background-image: url(../Picture/unnamed\ \(1\).jpg);
+  background-color: rgb(166, 239, 248);
+}
 p{
   border: 3px solid  #3F89F3;
   background: #fff;
