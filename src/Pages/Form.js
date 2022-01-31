@@ -68,9 +68,14 @@ const Contact = () => {
     const Fetchdata = ()=>{
       
       db.collection('PicRe').doc(UserID).get()
-      .then(snapshot => setUserDetails(snapshot.data())
-      )
-      console.log(userDetails)
+      .then(querysnapshot => querysnapshot.forEach(element => {
+        var Score = element.data();
+        setUserDetails(arr => [...arr , Score]);
+        console.log(userDetails)
+      }));
+        
+      
+      
        
               
           

@@ -25,6 +25,8 @@ const Read = () => {
                 setInfo(arr => [...arr , contacts]);
                 console.log("inSnapshot")
                   
+
+                
             });
         })
     }
