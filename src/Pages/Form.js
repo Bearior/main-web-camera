@@ -69,7 +69,8 @@ const Contact = () => {
       
         db.collection('PicRe').doc(UserID).get()
         .then(snapshot => setUserDetails(snapshot.data()));
-        console.log(userDetails);
+        let Picscore = userDetails.toString();
+        console.log(Picscore);
 
        
               
