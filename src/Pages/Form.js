@@ -67,11 +67,10 @@ const Contact = () => {
 
     const Fetchdata = ()=>{
       
-        db.collection('PicRe').where("UserID", "==", UserID).get()
-        .then(snapshot => 
-          setUserDetails(snapshot.data()));
-          console.log("data",snapshot.data());
-        
+      db.collection('PicRe').doc(UserID).get()
+      .then(snapshot => setUserDetails(snapshot.data())
+      
+      )
        
               
           

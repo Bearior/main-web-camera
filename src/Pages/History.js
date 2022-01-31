@@ -38,7 +38,7 @@ const History = () => {
 
     var i = true ;
     const Fetchdata = ()=>{
-      if(i==true){
+      if(i===true){
 
         db.collection(userId).get().then((querySnapshot) => {
           console.log("incollection")
