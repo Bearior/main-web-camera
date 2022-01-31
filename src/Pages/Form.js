@@ -38,7 +38,7 @@ const Contact = () => {
     const [loader, setLoader] = useState(false);
     const UserID = userId
     const [Picscore, setPicscore] = useState("");
-
+    const [userDetails, setUserDetails] = useState('')
     let navigate = useNavigate();
 
     const initLine = () => {
@@ -66,14 +66,9 @@ const Contact = () => {
     
 
     const Fetchdata = ()=>{
-      db.collection("PicRe").doc(UserID).get().then((querySnapshot) => {
-        console.log("incollection")
-        querySnapshot.forEach(element => {
-            var contacts = element.data();
-            setInfo(arr => [...arr , contacts]);
-            console.log("inSnapshot")
-        });
-      })
+      
+        db.collection('PicRe').doc(UserID).get()
+        .then(snapshot => setUserDetails(snapshot.data()))
 
        
               
@@ -138,8 +133,8 @@ const Contact = () => {
   
     return (
       <form class="form" onSubmit={handleSubmit}>
-        {info.map((contacts) => 
-        <a>Pscore={contacts.Score}</a>)}
+        
+        <a>Pscore={userDetails}</a>)
        
         
       
