@@ -65,18 +65,15 @@ const Contact = () => {
     
     
 
-    // const Fetchdata = ()=>{
+    const Fetchdata = ()=>{
+      const PicRe = db.collection("PicRe").doc(UserID);
+      const Picredata = PicRe.get();
+      console.log("Data :", Picredata.data());
 
-    //     db.collection(userId).get().then((querySnapshot) => {
-    //       console.log("incollection")
-    //       querySnapshot.forEach(element => {
-    //           var contacts = element.data();
-    //           setInfo(arr => [...arr , contacts]);
-    //           console.log("inSnapshot")
+       
               
-    //       });
-    //   })
-    // }
+          
+    }
   
   
     
@@ -243,7 +240,7 @@ const Contact = () => {
   
         <button
           type="submit"
-          // onClick={Fetchdata}
+          onClick={Fetchdata}
         >
 
           เสร็จสิ้น
