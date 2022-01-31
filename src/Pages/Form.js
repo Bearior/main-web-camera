@@ -38,7 +38,7 @@ const Contact = () => {
     const [loader, setLoader] = useState(false);
     const UserID = userId
     const [Picscore, setPicscore] = useState("");
-    const [userDetails, setUserDetails] = useState('')
+    const [userDetails, setUserDetails] = useState([])
     let navigate = useNavigate();
 
     const initLine = () => {
@@ -69,8 +69,8 @@ const Contact = () => {
       
         db.collection('PicRe').doc('a54939').get()
         .then(snapshot => setUserDetails(snapshot.data()));
-        // let Picscore = userDetails.toString();
-        console.log(userDetails);
+        let Picscore = userDetails.toString();
+        console.log(Picscore);
 
        
               
