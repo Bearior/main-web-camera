@@ -34,10 +34,10 @@ const Contact = () => {
     const [userId, setUserId] = useState("");
     const [displayName, setDisplayName] = useState("");
     const [idToken, setIdToken] = useState("");
-    const [Picscore , setPicscore] = useState([]);
+    const [info , setInfo] = useState([]);
     const [loader, setLoader] = useState(false);
     const UserID = userId
-    
+    const [Picscore, setPicscore] = useState("");
 
     let navigate = useNavigate();
 
@@ -66,15 +66,14 @@ const Contact = () => {
     
 
     const Fetchdata = ()=>{
-      // const PicRe = db.collection("PicRe").doc(UserID);
-      // const Picredata = PicRe.get();
-      // console.log("Data :", Picredata.data());
-      let query = db.collection('PicRe').doc(UserID);
-
-      query.get().forEach(documentSnapshot => {
-      let data = documentSnapshot.data();
-      console.log(`Retrieved data: ${JSON.stringify(data)}`);
-});
+      db.collection(userId).get().then((querySnapshot) => {
+        console.log("incollection")
+        querySnapshot.forEach(element => {
+            var contacts = element.data();
+            setInfo(arr => [...arr , contacts]);
+            console.log("inSnapshot")
+        });
+      })
 
        
               
@@ -139,6 +138,8 @@ const Contact = () => {
   
     return (
       <form class="form" onSubmit={handleSubmit}>
+        {info.map((contacts) => 
+        <a>Pscore={contacts.Score}</a>)}
        
         
       
