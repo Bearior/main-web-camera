@@ -69,7 +69,7 @@ const Contact = () => {
       // const PicRe = db.collection("PicRe").doc(UserID);
       // const Picredata = PicRe.get();
       // console.log("Data :", Picredata.data());
-      let query = firestore.collection('PicRe').doc(UserID);
+      let query = db.collection('PicRe').doc(UserID);
 
       query.get().forEach(documentSnapshot => {
       let data = documentSnapshot.data();
