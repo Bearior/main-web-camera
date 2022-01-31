@@ -67,10 +67,10 @@ const Contact = () => {
 
     const Fetchdata = ()=>{
       
-        db.collection('PicRe').doc(`${userId}`).get()
+        db.collection('PicRe').doc('Score').get()
         .then(snapshot => setUserDetails(snapshot.data()));
-        let Picscore = userDetails.toString();
-        console.log(Picscore);
+        // let Picscore = userDetails.toString();
+        console.log(userDetails);
 
        
               
