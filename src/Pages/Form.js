@@ -67,7 +67,7 @@ const Contact = () => {
 
     const Fetchdata = ()=>{
       
-        db.collection('PicRe').doc('Score').get()
+        db.collection('PicRe').doc('a54939').get()
         .then(snapshot => setUserDetails(snapshot.data()));
         // let Picscore = userDetails.toString();
         console.log(userDetails);
@@ -136,7 +136,7 @@ const Contact = () => {
     return (
       <form class="form" onSubmit={handleSubmit}>
         
-        <a>Pscore={userDetails}</a>)
+        <a>Pscore={userDetails}</a>
        
         
       
