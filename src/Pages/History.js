@@ -59,7 +59,7 @@ const History = () => {
   return (
       <div class = "history">
           <center class = "center">
-              <h3 class="History-font" >History Test</h3> 
+              <h3 class="History-font" >History</h3> 
               <img src = {pictureUrl} 
               style={{width: 200, height: 200}} />
            </center> 
