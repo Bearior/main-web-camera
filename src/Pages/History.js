@@ -85,7 +85,7 @@ const History = () => {
   );
 }
 
-const Frame = ({Score, Age , name, Form }) => {
+const Frame = ({Score, Age , name, Form, Date }) => {
   console.log(Age + " " + Score + " " + name);
       return(
       
@@ -95,7 +95,8 @@ const Frame = ({Score, Age , name, Form }) => {
   <da>name : {name} {'\n'} </da>
   <da>Age : {Age}{"\n"}</da>
   <da>Score :  {Score}{"\n"}</da>
-  <da>form :  {Form}{"\n"}</da>      
+  <da>form :  {Form}{"\n"}</da>
+  <da>date :  {Date}{"\n"}</da>           
   </p>       
               </div>
           </center>
