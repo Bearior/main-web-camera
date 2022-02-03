@@ -73,7 +73,9 @@ const History = () => {
           info.map((contacts) => (
           <Frame Score={contacts.Score} 
                   Age={contacts.Age} 
-                  name={contacts.name}/>
+                  name={contacts.name}
+                  Form={contacts.form}
+                  Date={contacts.Date}/>
           ))
       }
       
@@ -83,7 +85,7 @@ const History = () => {
   );
 }
 
-const Frame = ({Score, Age , name }) => {
+const Frame = ({Score, Age , name, Form }) => {
   console.log(Age + " " + Score + " " + name);
       return(
       
@@ -92,7 +94,8 @@ const Frame = ({Score, Age , name }) => {
   <p>
   <da>name : {name} {'\n'} </da>
   <da>Age : {Age}{"\n"}</da>
-  <da>Score :  {Score}{"\n"}</da>      
+  <da>Score :  {Score}{"\n"}</da>
+  <da>form :  {Form}{"\n"}</da>      
   </p>       
               </div>
           </center>
