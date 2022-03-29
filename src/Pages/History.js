@@ -86,7 +86,6 @@ const History = () => {
 }
 
 const Frame = ({call, Age , name, time, Date, type }) => {
-  let navigate = useNavigate();
   const Confirm = () =>{
     Swal.fire({
       title: 'คุณแน่ใจหรือไม่?',
@@ -101,7 +100,7 @@ const Frame = ({call, Age , name, time, Date, type }) => {
         if (result.isConfirmed){
           Swal.fire('ยืนยันเรียบร้อย! กรุณารอการตอบกลับผ่านทางแชทบอท', '', 'success' )
          .then(() =>{
-            navigate("./History")
+          location.reload()
           })
         }
    })
@@ -120,7 +119,7 @@ const Frame = ({call, Age , name, time, Date, type }) => {
         if (result.isConfirmed){
           Swal.fire('ลบข้อมูลการนัดหมายเสร็จสิ้น', '', 'success' )
          .then(() =>{
-            navigate("./History")
+            location.reload()
           })
         }
    })
