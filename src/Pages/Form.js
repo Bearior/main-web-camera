@@ -105,6 +105,8 @@ const Contact = () => {
                 Age: age,
                 gender: gender,
                 call: Call,
+                time: sight,
+                type: sight2,
                 UserID: UserID,
                 }).then(() =>{
                   navigate("./History")
