@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import liff from '@line/liff';
 import "./App.css"
 import { db } from "../firebase";
+import Swal from 'sweetalert2'
 
 const History = () => {
     const [userId, setUserId] = useState("");
