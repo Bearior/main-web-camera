@@ -87,6 +87,9 @@ const Frame = ({call, Age , name, time, Date, type }) => {
   const Confirm = () =>{
     alert("ยืนยันเรียบร้อย กรุณารอการตอบกลับจากโรงพยาบาลผ่านหมายเลขโทรศัพท์")
   }
+  const Cancel = () =>{
+    alert("ยืนยันเรียบร้อย กรุณารอการตอบกลับจากโรงพยาบาลผ่านหมายเลขโทรศัพท์")
+  }
       return(      
           <center>
               <div className="div">
@@ -97,7 +100,7 @@ const Frame = ({call, Age , name, time, Date, type }) => {
   <da>เวลา :  {time}{"\n"}</da>
   <da>ประเภท :  {type}{"\n"}</da>
   <da>วันที่ :  {Date}{"\n"}</da>   
-  <button class="confirmbtn" onClick={Confirm}>ยืนยัน</button> <button>ยกเลิก</button>        
+  <button class="confirmbtn" onClick={Confirm}>ยืนยัน</button> <button class = "cancelbtn" onClick={Cancel}>ยกเลิก</button>        
   </p>       
   
               </div>
