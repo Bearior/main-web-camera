@@ -85,10 +85,42 @@ const History = () => {
 
 const Frame = ({call, Age , name, time, Date, type }) => {
   const Confirm = () =>{
-    alert("ยืนยันเรียบร้อย กรุณารอการตอบกลับจากโรงพยาบาลผ่านหมายเลขโทรศัพท์")
+    Swal.fire({
+      title: 'คุณแน่ใจหรือไม่?',
+      text: 'ถ้าแน่ใจแล้วกดใช่เลย!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33', 
+      confirmButtonText: 'ใช่!',
+      cancelButtonText:'ยกเลิก'
+      }).then((result) => {
+        if (result.isConfirmed){
+          Swal.fire('ยืนยันเรียบร้อย! กรุณารอการตอบกลับผ่านทางแชทบอท', '', 'success' )
+         .then(() =>{
+            navigate("./History")
+          })
+        }
+   })
   }
   const Cancel = () =>{
-    alert("ยืนยันเรียบร้อย กรุณารอการตอบกลับจากโรงพยาบาลผ่านหมายเลขโทรศัพท์")
+    Swal.fire({
+      title: 'คุณแน่ใจหรือไม่?',
+      text: 'ถ้าแน่ใจแล้วกดใช่เลย!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33', 
+      confirmButtonText: 'ใช่!',
+      cancelButtonText:'ยกเลิก'
+      }).then((result) => {
+        if (result.isConfirmed){
+          Swal.fire('ลบข้อมูลการนัดหมายเสร็จสิ้น', '', 'success' )
+         .then(() =>{
+            navigate("./History")
+          })
+        }
+   })
   }
       return(      
           <center>
