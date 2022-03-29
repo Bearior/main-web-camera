@@ -103,8 +103,6 @@ const Contact = () => {
                 name: name,
                 Age: age,
                 gender: gender,
-                Score: All,
-                com: com,
                 call: Call,
                 UserID: UserID,
                 }).then(() =>{
