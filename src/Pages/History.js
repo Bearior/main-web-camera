@@ -84,7 +84,6 @@ const History = () => {
 }
 
 const Frame = ({call, Age , name, time, Date, type }) => {
-  console.log(Age + " " + Score + " " + name);
       return(
       
           <center>
