@@ -68,7 +68,7 @@ const History = () => {
           
       {
           info.map((contacts) => (
-          <Frame Number={contacts.call} 
+          <Frame call={contacts.call} 
                   Age={contacts.Age} 
                   name={contacts.name}
                   Form={contacts.form}
@@ -92,7 +92,7 @@ const Frame = ({Score, Age , name, Form, Date }) => {
   <da>ชื่อ-สกุล : {name} {'\n'} </da>
   <da>อายุ : {Age}{"\n"}</da>
   <da>เบอร์โทรศัพท์ : {call}{"\n"}</da>
-  <da>เวลา :  {}{"\n"}</da>
+  {/* <da>เวลา :  {}{"\n"}</da> */}
   <da>ประเภท :  {Form}{"\n"}</da>
   <da>วันที่ :  {Date}{"\n"}</da>           
   </p>       

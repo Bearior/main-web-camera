@@ -187,7 +187,7 @@ const Contact = () => {
           <option value="">โปรดเลือก</option>
           <option value="06.00-09.00">06.00-09.00</option>
           <option value="10.00-12.00">10.00-12.00</option>
-          <option value="ewsa">13.00-15.00</option>
+          <option value="13.00-15.00">13.00-15.00</option>
           <option value="15.00-19.00">15.00-19.00</option>
         </select>
   
