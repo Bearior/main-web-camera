@@ -24,6 +24,7 @@ const Contact = () => {
     const [age, setAge] = useState("");
     const [sight2, setSight2] = useState("");
     const [gender, setGender] = useState("");
+    const [date, setDate] = useState("");
     const [sight, setSight] = useState("");
     const [sight3, setSight3] = useState("");
     const [sight4, setSight4] = useState("");
@@ -118,9 +119,10 @@ const Contact = () => {
   
       setName("");
       setAge("");
-      setSight2();
+      setSight2("");
       setGender("");
-      setSight();
+      setSight("");
+      setDate("");
       // setSight3();
       // setSight4();
       // setSight5();
@@ -152,6 +154,14 @@ const Contact = () => {
           required
         />
 
+        <label>โปรดระบุวันที่ที่ต้องการเข้าพบแพทย์</label>
+        <input
+          placeholder="ระบุวันที่ ว/ด/ป"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          required
+        />
+
         <label>โปรดระบุเบอร์โทรศัพท์ที่ติดต่อได้</label>
         <input
           placeholder="ระบุเบอร์โทรศัพท์ที่ติดต่อได้"
@@ -173,10 +183,10 @@ const Contact = () => {
           value={sight}
           onChange={(e) => setSight(e.target.value)} required  >
           <option value="">โปรดเลือก</option>
-          <option value={0}>06.00-09.00</option>
-          <option value={2}>10.00-12.00</option>
-          <option value={3}>13.00-15.00</option>
-          <option value={4}>15.00-19.00</option>
+          <option value="06.00-09.00">06.00-09.00</option>
+          <option value="10.00-12.00">10.00-12.00</option>
+          <option value="13.00-15.00">13.00-15.00</option>
+          <option value="15.00-19.00">15.00-19.00</option>
         </select>
   
         <label>ต้องการพบแพทย์เนื่องจากมีอาการอย่างไร</label>
@@ -184,10 +194,10 @@ const Contact = () => {
           value={sight2}
           onChange={(e) => setSight2(e.target.value)} required >
           <option value="">โปรดเลือก</option>
-          <option value={0}>ปวดหัว, มีไข้</option>
-          <option value={1}>ปวดหน้าอก มีโรคประจำตัวเกี่ยวกับหัวใจ</option>
-          <option value={2}>ปวดท้อง, ปวดบิด, เจ็บกระเพราะ</option>
-          <option value={3}>ปวดหลัง, มีปัญหาข้อเข่า</option>
+          <option value="สมองและระบบประสาท">ปวดหัว, มีไข้</option>
+          <option value="หัวใจและหลอดเลือด">ปวดหน้าอก มีโรคประจำตัวเกี่ยวกับหัวใจ</option>
+          <option value="ลำไส้และทางเดินอาหาร">ปวดท้อง, ปวดบิด, เจ็บกระเพราะ</option>
+          <option value="กระดูกและข้อ">ปวดหลัง, มีปัญหาข้อเข่า</option>
         </select>
   
         {/* <label> มีจุดดำๆหรือมัวๆอยู่บนตาของท่านหรือไม่ </label>
