@@ -91,7 +91,7 @@ const Frame = ({Score, Age , name, Form, Date }) => {
   <p>
   <da>ชื่อ-สกุล : {name} {'\n'} </da>
   <da>อายุ : {Age}{"\n"}</da>
-  <da>เบอร์โทรศัพท์ : {call}{"\n"}</da>
+  {/* <da>เบอร์โทรศัพท์ : {call}{"\n"}</da> */}
   {/* <da>เวลา :  {}{"\n"}</da> */}
   <da>ประเภท :  {Form}{"\n"}</da>
   <da>วันที่ :  {Date}{"\n"}</da>           
