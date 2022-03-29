@@ -3,6 +3,7 @@ import liff from '@line/liff';
 import "./App.css"
 import { db } from "../firebase";
 import Swal from 'sweetalert2'
+import { useNavigate } from "react-router-dom";
 
 const History = () => {
     const [userId, setUserId] = useState("");
@@ -85,6 +86,7 @@ const History = () => {
 }
 
 const Frame = ({call, Age , name, time, Date, type }) => {
+  let navigate = useNavigate();
   const Confirm = () =>{
     Swal.fire({
       title: 'คุณแน่ใจหรือไม่?',
