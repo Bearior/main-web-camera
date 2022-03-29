@@ -53,6 +53,7 @@ const History = () => {
       
       }
   }
+    
   return (
       <div class = "history">
           <center class = "center">
@@ -84,8 +85,10 @@ const History = () => {
 }
 
 const Frame = ({call, Age , name, time, Date, type }) => {
-      return(
-      
+  const Confirm = () =>{
+    alert("ยืนยันเรียบร้อย กรุณารอการตอบกลับจากโรงพยาบาลผ่านหมายเลขโทรศัพท์")
+  }
+      return(      
           <center>
               <div className="div">
   <p>
@@ -96,6 +99,7 @@ const Frame = ({call, Age , name, time, Date, type }) => {
   <da>ประเภท :  {type}{"\n"}</da>
   <da>วันที่ :  {Date}{"\n"}</da>           
   </p>       
+  <button onClick={Confirm} >ยืนยัน</button><button>ยกเลิก</button>
               </div>
           </center>
       );
