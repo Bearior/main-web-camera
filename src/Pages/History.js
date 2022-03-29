@@ -100,7 +100,7 @@ const Frame = ({call, Age , name, time, Date, type }) => {
         if (result.isConfirmed){
           Swal.fire('ยืนยันเรียบร้อย! กรุณารอการตอบกลับผ่านทางแชทบอท', '', 'success' )
          .then(() =>{
-          location.reload()
+          windows.location.reload()
           })
         }
    })
@@ -119,7 +119,7 @@ const Frame = ({call, Age , name, time, Date, type }) => {
         if (result.isConfirmed){
           Swal.fire('ลบข้อมูลการนัดหมายเสร็จสิ้น', '', 'success' )
          .then(() =>{
-            location.reload()
+            windows.location.reload()
           })
         }
    })
