@@ -30,6 +30,7 @@ const Contact = () => {
     const [sight5, setSight5] = useState("");
     const [sight6, setSight6] = useState("");
     const [sight7, setSight7] = useState("");
+    const [Call, setCall] = useState("");
     const [com, setCom] = useState("");
     const [userId, setUserId] = useState("");
     const [displayName, setDisplayName] = useState("");
@@ -97,13 +98,14 @@ const Contact = () => {
                 console.log("in If")
                 Swal.fire('แบบฟอร์มของคุณเสร็จแล้ว!', '', 'success' )
                 const All = parseInt(sight)+parseInt(sight2)+parseInt(sight3)+parseInt(sight4)+parseInt(sight5)+parseInt(sight6)+parseInt(sight7)+parseInt(Picscore)
-                db.collection(UserID)
+                db.collection("Queue").doc(UserID)
                 .add({
                 name: name,
                 Age: age,
                 gender: gender,
                 Score: All,
                 com: com,
+                call: Call,
                 UserID: UserID,
                 }).then(() =>{
                   navigate("./History")
@@ -121,12 +123,13 @@ const Contact = () => {
       setSight2();
       setGender("");
       setSight();
-      setSight3();
-      setSight4();
-      setSight5();
-      setSight6();
-      setSight7();
-      setCom("");
+      // setSight3();
+      // setSight4();
+      // setSight5();
+      // setSight6();
+      // setSight7();
+      // setCom("");
+      setCall("");
     };
   
     return (
@@ -150,6 +153,14 @@ const Contact = () => {
           onChange={(e) => setAge(e.target.value)}
           required
         />
+
+        <label>โปรดระบุเบอร์โทรศัพท์ที่ติดต่อได้</label>
+        <input
+          placeholder="ระบุเบอร์โทรศัพท์ที่ติดต่อได้"
+          value={Call}
+          onChange={(e) => setCall(e.target.value)}
+          required
+        />
         
         <label >เลือกเพศสภาพของคุณ</label>
         <select value={gender} onChange={(e) => setGender(e.target.value)} required >
@@ -159,27 +170,29 @@ const Contact = () => {
           <option value="Others">อื่นๆ</option>
         </select>
   
-        <label>ตอนนี้ท่านมองเห็นได้ชัดหรือไม่</label>
-        <img src={Form1} alt="Logo" />
+        <label>กรุณาเลือกเวลาที่ต้องการเข้าพบแพทย์</label>
         <select
           value={sight}
           onChange={(e) => setSight(e.target.value)} required  >
           <option value="">โปรดเลือก</option>
-          <option value={0}>ชัด</option>
-          <option value={2}>ไม่ชัด</option>
-          <option value={1}>ไม่แน่ใจ</option>
+          <option value={0}>06.00-09.00</option>
+          <option value={2}>10.00-12.00</option>
+          <option value={3}>13.00-15.00</option>
+          <option value={4}>15.00-19.00</option>
         </select>
   
-        <label>ท่านมีอาการคันตาหรือไม่ ภายใน3วันนี้</label>
+        <label>ต้องการพบแพทย์เนื่องจากมีอาการอย่างไร</label>
         <select
           value={sight2}
           onChange={(e) => setSight2(e.target.value)} required >
           <option value="">โปรดเลือก</option>
-          <option value={1}>มี</option>
-          <option value={0}>ไม่มี</option>
+          <option value={0}>ปวดหัว, มีไข้</option>
+          <option value={1}>ปวดหน้าอก มีโรคประจำตัวเกี่ยวกับหัวใจ</option>
+          <option value={2}>ปวดท้อง, ปวดบิด, เจ็บกระเพราะ</option>
+          <option value={3}>ปวดหลัง, มีปัญหาข้อเข่า</option>
         </select>
   
-        <label> มีจุดดำๆหรือมัวๆอยู่บนตาของท่านหรือไม่ </label>
+        {/* <label> มีจุดดำๆหรือมัวๆอยู่บนตาของท่านหรือไม่ </label>
         <img src={Form2} alt="Logo" />
         <select
           value={sight3}
@@ -188,9 +201,9 @@ const Contact = () => {
           <option value={2}>มี</option>
           <option value={0}>ไม่มี</option>
           <option value={1}>ไม่แน่ใจ</option>
-        </select>
+        </select> */}
   
-        <label> ก่อนท่านจะมาใช้บริการของทางเรา ท่านเคยไปพบหมอดวงตามาก่อนหรือไม่ </label>
+        {/* <label> ก่อนท่านจะมาใช้บริการของทางเรา ท่านเคยไปพบหมอดวงตามาก่อนหรือไม่ </label>
         <select
           value={sight4}
           onChange={(e) => setSight4(e.target.value)} required >
@@ -232,7 +245,7 @@ const Contact = () => {
           placeholder="ความคิดเห็นของคุณ"
           value={com}
           onChange={(e) => setCom(e.target.value)}
-        />
+        /> */}
   
         <button
           type="submit"

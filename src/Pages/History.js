@@ -40,7 +40,7 @@ const History = () => {
     const Fetchdata = ()=>{
       if(i===true){
 
-        db.collection(userId).get().then((querySnapshot) => {
+        db.collection("Queue").doc(userId).get().then((querySnapshot) => {
           console.log("incollection")
           querySnapshot.forEach(element => {
               var contacts = element.data();
@@ -65,7 +65,7 @@ const History = () => {
            </center> 
            <h1><h2>สวัสดี คุณ </h2>{displayName} </h1>
            <center>
-            <button class="loadbtn" onClick={Fetchdata}>คลิกเพื่อดูประวัติการตรวจสอบ</button>
+            <button class="loadbtn" onClick={Fetchdata}>คลิกเพื่อดูประวัติการนัดแพทย์</button>
            </center>
            
           
