@@ -73,17 +73,9 @@ const Contact = () => {
         setUserDetails(arr => [...arr , Score]);
         console.log(userDetails)
       }));
-        
-      
-      
-       
-              
-          
     }
   
   
-    
-
     const handleSubmit = (e) => {
       e.preventDefault();
       setLoader(true);
@@ -139,13 +131,9 @@ const Contact = () => {
   
     return (
       <form class="form" onSubmit={handleSubmit}>
-        
-        <a>Pscore={userDetails}</a>
-       
-        
-      
-        <h2>แบบสอบถามเกี่ยวกับโรคต้อกระจก</h2>
-        <h1><d>สวัสดี คุณ </d>{displayName}<f> โปรดตอบตามความจริงเพื่อผลประโยช์นสูงสุดของทั้งสองฝ่าย</f></h1>
+
+        <h2>แบบสอบถามเพื่อจองคิวรับการตรวจ</h2>
+        <h1><d>สวัสดี คุณ </d>{displayName}<f> กรุณากรอกแบบฟอร์มข้างล่างเพื่อที่ทางโรงพยาบาลจะได้ติดต่อไป </f></h1>
   
         <label>ชื่อ - สกุล</label>
         <input
