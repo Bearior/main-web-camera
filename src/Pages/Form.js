@@ -108,6 +108,7 @@ const Contact = () => {
                 time: sight,
                 type: sight2,
                 UserID: UserID,
+                Date: date,
                 }).then(() =>{
                   navigate("./History")
                 })

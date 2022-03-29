@@ -71,8 +71,9 @@ const History = () => {
           <Frame call={contacts.call} 
                   Age={contacts.Age} 
                   name={contacts.name}
-                  Form={contacts.form}
-                  Date={contacts.Date}/>
+                  time={contacts.time}
+                  Date={contacts.Date}
+                  type={contacts.type}/>
           ))
       }
       
@@ -82,7 +83,7 @@ const History = () => {
   );
 }
 
-const Frame = ({Score, Age , name, Form, Date }) => {
+const Frame = ({call, Age , name, time, Date, type }) => {
   console.log(Age + " " + Score + " " + name);
       return(
       
@@ -91,9 +92,9 @@ const Frame = ({Score, Age , name, Form, Date }) => {
   <p>
   <da>ชื่อ-สกุล : {name} {'\n'} </da>
   <da>อายุ : {Age}{"\n"}</da>
-  {/* <da>เบอร์โทรศัพท์ : {call}{"\n"}</da> */}
-  {/* <da>เวลา :  {}{"\n"}</da> */}
-  <da>ประเภท :  {Form}{"\n"}</da>
+  <da>เบอร์โทรศัพท์ : {call}{"\n"}</da>
+  <da>เวลา :  {time}{"\n"}</da>
+  <da>ประเภท :  {type}{"\n"}</da>
   <da>วันที่ :  {Date}{"\n"}</da>           
   </p>       
               </div>
