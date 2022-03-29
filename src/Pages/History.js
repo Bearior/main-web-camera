@@ -97,9 +97,10 @@ const Frame = ({call, Age , name, time, Date, type }) => {
   <da>เบอร์โทรศัพท์ : {call}{"\n"}</da>
   <da>เวลา :  {time}{"\n"}</da>
   <da>ประเภท :  {type}{"\n"}</da>
-  <da>วันที่ :  {Date}{"\n"}</da>           
+  <da>วันที่ :  {Date}{"\n"}</da>   
+  <button onClick={Confirm} >ยืนยัน</button><button>ยกเลิก</button>        
   </p>       
-  <button onClick={Confirm} >ยืนยัน</button><button>ยกเลิก</button>
+  
               </div>
           </center>
       );
