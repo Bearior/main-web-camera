@@ -111,7 +111,8 @@ const Contact = () => {
                 Date: date,
                 status: "ยังไม่ได้ยืนยันการนัด"
                 }).then(() =>{               
-                  window.open("about:blank", "_self");
+                  window.opener = null;
+                  window.open("", "_self");
                   window.close();
                 })
               }
