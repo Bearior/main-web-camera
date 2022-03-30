@@ -111,7 +111,7 @@ const Contact = () => {
                 Date: date,
                 status: "ยังไม่ได้ยืนยันการนัด"
                 }).then(() =>{               
-                  window.close();  
+                  navigate("/FBT");
                 })
               }
          })
