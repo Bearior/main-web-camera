@@ -158,7 +158,7 @@ const Frame = ({call, Age , name, time, Date, type, status }) => {
           Swal.fire('ลบข้อมูลการนัดหมายเสร็จสิ้น', '', 'success' )
          .then(() =>{
             const QRef = db.collection("Queue").doc().where("UserID", "==", userId);
-            await QRef.delete();
+            QRef.delete();
             window.location.reload()
           })
         }
