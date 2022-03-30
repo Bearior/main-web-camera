@@ -99,7 +99,7 @@ const Contact = () => {
                 console.log("in If")
                 Swal.fire('แบบฟอร์มของคุณเสร็จแล้ว!', '', 'success' )
                 const All = parseInt(sight)+parseInt(sight2)+parseInt(sight3)+parseInt(sight4)+parseInt(sight5)+parseInt(sight6)+parseInt(sight7)+parseInt(Picscore)
-                db.collection("Queue")
+                db.collection("Queue").doc(UserID)
                 .add({
                 name: name,
                 Age: age,
