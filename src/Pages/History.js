@@ -76,19 +76,55 @@ const History = () => {
                   name={contacts.name}
                   time={contacts.time}
                   Date={contacts.Date}
-                  type={contacts.type}/>
+                  type={contacts.type}
+                  status={contacts.status}/>
           ))
       }
       
       </div>
+      
 
   );
 }
 
-const Frame = ({call, Age , name, time, Date, type }) => {
+
+
+const Frame = ({call, Age , name, time, Date, type, status }) => {
+    
+    const [userId, setUserId] = useState("");
+    const [displayName, setDisplayName] = useState("");
+    const [idToken, setIdToken] = useState("");
+    const [pictureUrl, setPictureUrl] = useState("");
+    const [info , setInfo] = useState([]);
+
+    const initLine = () => {
+      liff.init({ liffId: '1656554390-E4AwKpm8' }, () => {
+        if (liff.isLoggedIn()) {
+          runApp();
+          
+        } else {
+          liff.login();
+        }
+      }, err => console.error(err));
+      }
+    const runApp = () => {
+      const idToken = liff.getIDToken();
+      setIdToken(idToken);
+      liff.getProfile().then(profile => {
+        console.log(profile);
+        setDisplayName(profile.displayName);
+        setUserId(profile.userId);
+        setPictureUrl(profile.pictureUrl);
+      }).catch(err => console.error(err));
+    }
+    useEffect(() => {
+      initLine();
+      
+    }, []);
+  
   const Confirm = () =>{
     Swal.fire({
-      title: 'คุณแน่ใจหรือไม่?',
+      title: 'ยืนยันการนัดหรือไม่?',
       text: 'ถ้าแน่ใจแล้วกดใช่เลย!',
       icon: 'warning',
       showCancelButton: true,
@@ -100,6 +136,7 @@ const Frame = ({call, Age , name, time, Date, type }) => {
         if (result.isConfirmed){
           Swal.fire('ยืนยันเรียบร้อย! กรุณารอการตอบกลับผ่านทางแชทบอท', '', 'success' )
          .then(() =>{
+          db.collection("Queue").where("UserID", "==", userId).update({status:"ยืนยันการนัดแล้ว"})
           window.location.reload()
           })
         }
@@ -107,7 +144,7 @@ const Frame = ({call, Age , name, time, Date, type }) => {
   }
   const Cancel = () =>{
     Swal.fire({
-      title: 'คุณแน่ใจหรือไม่?',
+      title: 'ยกเลิกการนัดใช่หรือไม่?',
       text: 'ถ้าแน่ใจแล้วกดใช่เลย!',
       icon: 'warning',
       showCancelButton: true,
@@ -119,6 +156,7 @@ const Frame = ({call, Age , name, time, Date, type }) => {
         if (result.isConfirmed){
           Swal.fire('ลบข้อมูลการนัดหมายเสร็จสิ้น', '', 'success' )
          .then(() =>{
+            db.collection("Queue").where("UserID", "==", userId).delete();
             window.location.reload()
           })
         }
@@ -134,6 +172,7 @@ const Frame = ({call, Age , name, time, Date, type }) => {
   <da>เวลา :  {time}{"\n"}</da>
   <da>ประเภท :  {type}{"\n"}</da>
   <da>วันที่ :  {Date}{"\n"}</da>   
+  <da>สถานะการยืนยัน :  {status}{"\n"}</da> 
   <button class="confirmbtn" onClick={Confirm}>ยืนยัน</button> <button class = "cancelbtn" onClick={Cancel}>ยกเลิก</button>        
   </p>       
   
