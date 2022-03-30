@@ -99,7 +99,7 @@ const Contact = () => {
                 console.log("in If")
                 Swal.fire('แบบฟอร์มของคุณเสร็จแล้ว!', '', 'success' )
                 const Qref = db.collection("Queue");
-                Qref.doc(userId).add({
+                Qref.doc("awdsawdsa").add({
                 name: name,
                 Age: age,
                 gender: gender,
