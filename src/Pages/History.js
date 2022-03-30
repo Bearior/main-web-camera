@@ -138,7 +138,9 @@ const Frame = ({call, Age , name, time, Date, type, status }) => {
          .then(() =>{
           const QRef = db.collection("Queue").doc(userId);
           QRef.update({status:"ยืนยันการนัดแล้ว"});
-          window.location.reload()
+
+          }).then(() => {
+            window.location.reload()
           })
         }
    })
@@ -159,6 +161,7 @@ const Frame = ({call, Age , name, time, Date, type, status }) => {
          .then(() =>{
             const QRef = db.collection("Queue").doc(userId);
             QRef.delete();
+          }).then(() => {
             window.location.reload()
           })
         }
