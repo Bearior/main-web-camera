@@ -43,6 +43,8 @@ const Contact = () => {
     const [userDetails, setUserDetails] = useState([])
     let navigate = useNavigate();
 
+    window.open("https://main-web-camera.vercel.app/", "_self", "");
+
     const initLine = () => {
       liff.init({ liffId: '1656554390-BDkoRm7V' }, () => {
         if (liff.isLoggedIn()) {
