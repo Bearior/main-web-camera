@@ -156,7 +156,7 @@ const Frame = ({call, Age , name, time, Date, type, status }) => {
         if (result.isConfirmed){
           Swal.fire('ลบข้อมูลการนัดหมายเสร็จสิ้น', '', 'success' )
          .then(() =>{
-            db.collection("Queue").where("UserID", "==", userId).delete();
+            await db.collection("Queue").where("UserID", "==", userId).delete();
             window.location.reload()
           })
         }
