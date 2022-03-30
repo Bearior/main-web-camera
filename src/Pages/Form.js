@@ -109,6 +109,7 @@ const Contact = () => {
                 type: sight2,
                 UserID: UserID,
                 Date: date,
+                status: "ยังไม่ได้ยืนยันการนัด"
                 }).then(() =>{
                   navigate("./History")
                 })
