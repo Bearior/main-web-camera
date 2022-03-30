@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 
 
 const FBT = () => {
-    useEffect(() => {window.open("https://main-web-camera.vercel.app/FBT", "_self", "");}, []);
-const Close = ()=>{
+    window.open("https://main-web-camera.vercel.app/FBT", "_self", "")
+    const Close = ()=>{
     window.close();
 }
 return(
