@@ -110,7 +110,8 @@ const Contact = () => {
                 Date: date,
                 status: "ยังไม่ได้ยืนยันการนัด"
                 }).then(() =>{               
-                  navigate("./FBT");
+                  window.open("about:blank", "_self");
+                  window.close();
                 });
               };
          })
