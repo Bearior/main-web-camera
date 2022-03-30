@@ -43,8 +43,6 @@ const Contact = () => {
     const [userDetails, setUserDetails] = useState([])
     let navigate = useNavigate();
 
-    window.open("https://main-web-camera.vercel.app/", "_self", "");
-
     const initLine = () => {
       liff.init({ liffId: '1656554390-BDkoRm7V' }, () => {
         if (liff.isLoggedIn()) {
@@ -113,9 +111,7 @@ const Contact = () => {
                 Date: date,
                 status: "ยังไม่ได้ยืนยันการนัด"
                 }).then(() =>{               
-                  window.opener = null;
-                  window.open("", "_self");
-                  window.close();
+                  navigate("/FBT");
                 })
               }
          })
