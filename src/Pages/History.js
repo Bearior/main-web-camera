@@ -123,6 +123,8 @@ const Frame = ({call, Age , name, time, Date, type, status }) => {
     }, []);
   
   const Confirm = () =>{
+    const QRef = db.collection("Queue").doc(userId);
+          QRef.update({status:"ยืนยันการนัดแล้ว"});
     Swal.fire({
       title: 'ยืนยันการนัดหรือไม่?',
       text: 'ถ้าแน่ใจแล้วกดใช่เลย!',
@@ -135,17 +137,15 @@ const Frame = ({call, Age , name, time, Date, type, status }) => {
       }).then((result) => {
         if (result.isConfirmed){
           Swal.fire('ยืนยันเรียบร้อย! กรุณารอการตอบกลับผ่านทางแชทบอท', '', 'success' )
-         .then(() =>{
-          const QRef = db.collection("Queue").doc(userId);
-          QRef.update({status:"ยืนยันการนัดแล้ว"});
-
-          }).then(() => {
+          .then(() => {
             window.location.reload()
           })
         }
    })
   }
   const Cancel = () =>{
+    const QRef = db.collection("Queue").doc(userId);
+          QRef.delete();
     Swal.fire({
       title: 'ยกเลิกการนัดใช่หรือไม่?',
       text: 'ถ้าแน่ใจแล้วกดใช่เลย!',
@@ -159,10 +159,7 @@ const Frame = ({call, Age , name, time, Date, type, status }) => {
         if (result.isConfirmed){
           Swal.fire('ลบข้อมูลการนัดหมายเสร็จสิ้น', '', 'success' )
          .then(() =>{
-            const QRef = db.collection("Queue").doc(userId);
-            QRef.delete();
-          }).then(() => {
-            window.location.reload()
+          window.location.reload()
           })
         }
    })
