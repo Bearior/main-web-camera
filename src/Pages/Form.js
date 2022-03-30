@@ -110,8 +110,7 @@ const Contact = () => {
                 UserID: UserID,
                 Date: date,
                 status: "ยังไม่ได้ยืนยันการนัด"
-                }).then(() =>{
-                  navigate("./History")
+                }).then(() =>{                 
                 })
               }
          })
