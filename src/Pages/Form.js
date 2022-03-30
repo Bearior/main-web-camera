@@ -98,7 +98,7 @@ const Contact = () => {
               if (result.isConfirmed){
                 console.log("in If")
                 Swal.fire('แบบฟอร์มของคุณเสร็จแล้ว!', '', 'success' )
-                const Qref = db.collection("Queue").doc(UserID);
+                const Qref = db.collection("Queue").doc(userId);
                 Qref.add({
                 name: name,
                 Age: age,
